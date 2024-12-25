@@ -1,6 +1,6 @@
 <?php
 
-namespace uc\modules\Http\Livewire\UserModule;
+namespace  App\Livewire\UserModule ;
 
 
 
@@ -8,7 +8,7 @@ namespace uc\modules\Http\Livewire\UserModule;
  
 use Livewire\Component;
 use App\Services\FlashMsg;
-use uc\modules\Models\User;
+use App\Models\User; 
 use Livewire\Attributes\Url;
 use Livewire\WithPagination;
 use Livewire\Attributes\Rule;
@@ -124,6 +124,6 @@ class UserIndex extends Component
             ->orderBy($this->sortBy, $this->sortdir)
             ->paginate($this->perPage);
 
-        return view('modules::livewire.users.user-index', compact('users'))->layoutData(['title' => $title, 'pageTitle' => $pageTitle]);
+        return view('livewire.users.user-index', compact('users'))->layoutData(['title' => $title, 'pageTitle' => $pageTitle]);
     }
 }

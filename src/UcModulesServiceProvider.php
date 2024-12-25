@@ -21,11 +21,11 @@ class UcModulesServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Blade::anonymousComponentPath(base_path('package\modules\resources\views\components'));  
-        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
-        $this->loadMigrationsFrom(__DIR__ . '/../migrations');
-        $this->loadViewsFrom(__DIR__ . '/../resources/views/', 'modules');
-        $this->mergeConfigFrom(__DIR__.'/../config/myConstants.php','modules');
+        // Blade::anonymousComponentPath(base_path('package\modules\resources\views\components'));  
+        // $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        // $this->loadMigrationsFrom(__DIR__ . '/../migrations');
+        // $this->loadViewsFrom(__DIR__ . '/../resources/views/', 'modules');
+        // $this->mergeConfigFrom(__DIR__.'/../config/myConstants.php','modules');
 
         
         $this->publishes(
@@ -33,7 +33,7 @@ class UcModulesServiceProvider extends ServiceProvider
             'views'
         );
 
-        $this->publishes( [__DIR__ . '/../lang' => lang_path(''),],
+        $this->publishes( [__DIR__ . '/../lang' => lang_path(),],
            
         'lang'
     );
@@ -69,16 +69,13 @@ class UcModulesServiceProvider extends ServiceProvider
         'userModel'
       );
 
-      $this->publishes([
-        __DIR__.'/../routes/user.php' => base_path('routes/user.php'),
-    ]);
 
     $this->publishes([
-        __DIR__.'/Http/helper' => app_path('helper'),
+        __DIR__.'/helper' => app_path('helper'),
     ],'helper');
 
     $this->publishes([
-        __DIR__.'/Http/Traits' => app_path('Traits'),
+        __DIR__.'/Traits' => app_path('Traits'),
     ],'Traits');
 
 

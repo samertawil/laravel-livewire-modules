@@ -51,7 +51,7 @@
             'is-invalid' => $errors->has($name)]) }}>
         <small class="text-muted">{{$description_field}}</small>
 
-        @include('modules::partials._show-error',['field_name'=>$name])
+        @include('partials._show-error',['field_name'=>$name])
 
     
 </div>

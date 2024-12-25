@@ -35,7 +35,7 @@
 
 
             <label for={{ $value1 }} class="form-label fw-normal mr-4">{{ $value_title1 }}</label>
-            @include('modules::partials._show-error', [
+            @include('partials._show-error', [
                 'field_name' => $name,
             ])
         </div>

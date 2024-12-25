@@ -28,7 +28,7 @@
 
     <div class="row justify-content-between align-items-center">
         <div class="col-sm-12 col-md-2">
-            <div> <span class="ml-1">السطور</span> <label><select wire:model.live='perPage'
+            <div> <span class="ml-1">{{__('ucModule.record')}}</span> <label><select wire:model.live='perPage'
                         class="custom-select custom-select-sm form-control form-control-sm">
 
                         <option value="10">10</option>
@@ -41,7 +41,7 @@
 
         <div class="col-sm-12 col-md-2">
             <x-select :options="config('myConstants')['userType']" divWidth="12" ChoseTitle="نوع المستخدم" wire:model.live="searchUsertype"
-                ChoseTitle='الكل'></x-select>
+                ChoseTitle="{{__('ucModule.all')}}"></x-select>
         </div>
 
         <div class="col-sm-12 col-md-3">
@@ -67,23 +67,23 @@
                             sortdir={{ $sortdir }}></x-table-th>
 
                         <x-table-th wire:click="setSortBy('name')" name="name" sortBy={{ $sortBy }}
-                            sortdir={{ $sortdir }} labelname="صاحب الحساب"></x-table-th>
-
+                            sortdir={{ $sortdir }}  ></x-table-th>
+                          
                         <x-table-th wire:click="setSortBy('user_type')" name="user_type" sortBy={{ $sortBy }}
-                            sortdir={{ $sortdir }} labelname="نوع الحساب"></x-table-th>
+                            sortdir={{ $sortdir }}></x-table-th>
 
 
                         <x-table-th wire:click="setSortBy('user_activation')" name="user_activation"
-                            sortBy={{ $sortBy }} sortdir={{ $sortdir }} labelname="التفعيل"></x-table-th>
+                            sortBy={{ $sortBy }} sortdir={{ $sortdir }}></x-table-th>
 
 
-                        <th><span>الجوال</span></th>
+                        <th><span>{{__('ucModule.mobile')}}</span></th>
 
 
 
 
 
-                        <th class="text-center">الاجراءات</th>
+                        <th class="text-center">{{__('ucModule.actions')}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -172,7 +172,7 @@
 
                                     <a wire:loading.attr='disabled' class="btn btn-lg text-danger "
                                     wire:confirm.prompt='هل انت متأكد؟  \n للتاكيد الرجاء كتابة اسم المستخدم|{{ $user->user_name }}'
-                                    wire:click.prevent='destroy({{ $user->id }})'> <i class="ti-trash"></i> </a>
+                                    wire:click.prevent='destroy({{ $user->id }})'> <i class="ti-trash text-danger"></i> </a>
 
                             @else
                                 <x-actions make wire:loading.attr='disabled' wire:click='update'></x-actions>
@@ -184,7 +184,7 @@
 
                                 <a href="#" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"
                                     id="dropdownMenuButton" class="btn btn-lg text-dark">
-                                    <i class="ti-settings"></i>
+                                    <i class="ti-settings text-dark"></i>
 
                                 </a>
 
@@ -192,7 +192,7 @@
                                     <a class="dropdown-item " href="#"
                                         wire:click='resetPass({{ $user->id }})'> طلب كلمة مرور جديدة</a>
                                        
-                                        <a class="dropdown-item " href="{{route('user-roles.create',$user->id )}}"
+                                        <a class="dropdown-item " href="#"
                                        > منح الصلاحيات</a>
                                 </div>
                             </div>

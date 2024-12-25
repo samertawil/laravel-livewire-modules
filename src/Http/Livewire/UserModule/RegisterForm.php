@@ -2,7 +2,7 @@
 
 namespace uc\modules\Http\Livewire;
 
-use uc\modules\Models\User;
+ use App\Models\User; 
 use Livewire\Component;
 use App\Services\FlashMsg;
 use Livewire\Attributes\Rule;

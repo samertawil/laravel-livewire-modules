@@ -17,7 +17,7 @@
     
         <a href="#" class="btn btn-sm btn-warning " {{ $attributes }}>
 
-            <i class="fa fa-key o" aria-hidden="true"></i>
+            <i class="fa fa-key o btn-warning" aria-hidden="true"></i>
 
         </a>
     @endif
@@ -25,7 +25,7 @@
     @if ($edit)
         <a href={{ $route }} @class(['btn btn-lg text-info ']) {{ $attributes }}>
 
-            <i class="ti-pencil-alt"></i>
+            <i class="ti-pencil-alt text-primary"></i>
 
         </a>
     @endif
@@ -35,7 +35,7 @@
                 wire:confirm='هل انت متأكد؟'
             {{ $attributes }}>
 
-            <i class="ti-trash"></i>
+            <i class="ti-trash text-danger"></i>
 
         </a>
     @endif
@@ -44,7 +44,7 @@
 
     @if ($cancel)
         <a href="#" class="btn btn-lg text-warning" {{ $attributes }}>
-            <i class="ti-back-right"></i>
+            <i class="ti-back-right text-warning"></i>
 
         </a>
     @endif
@@ -53,7 +53,7 @@
         <a href="#" class="btn btn-lg text-success" style="vertical-align:middle  !impoartant;"
             {{ $attributes }}>
 
-            <i class="ti-save"></i>
+            <i class="ti-save text-success"></i>
         </a>
     @endif
 
@@ -62,7 +62,7 @@
     @if ($preview)
         <a href="#" class="btn btn-lg text-primary "{{ $attributes }}>
 
-            <i class="ti-eye"></i>
+            <i class="ti-eye text-success" ></i>
 
         </a>
     @endif
@@ -71,7 +71,7 @@
     @if ($plus)
         <a href="#" class="btn btn-lg text-primary " {{ $attributes }}>
 
-            <i class="ti-plus"></i>
+            <i class="ti-plus text-primary"></i>
 
         </a>
     @endif
@@ -80,7 +80,7 @@
     @if ($mins)
         <a href="#" class="btn btn-lg text-danger " {{ $attributes }}>
 
-            <i class="ti-minus"></i>
+            <i class="ti-minus text-danger"></i>
 
         </a>
     @endif

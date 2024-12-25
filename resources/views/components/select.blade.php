@@ -48,7 +48,7 @@
                     {{ $value }} </option>
             @endforeach
         </select>
-        @include('modules::partials._show-error', ['field_name' => $name])
+        @include('partials._show-error', ['field_name' => $name])
     </div>
   
 </div>
