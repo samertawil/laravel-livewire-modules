@@ -1,0 +1,21 @@
+{
+    "name": "laravel-livewire/uc-modules",
+    "description": "laravel livewire user config modules",
+    "type": "library",
+    "require": {
+        "livewire/livewire": "3.5"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "uc\\modules\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "samer tawil",
+            "email": "eng.samertawil@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
