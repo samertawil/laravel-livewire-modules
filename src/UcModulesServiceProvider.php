@@ -26,5 +26,54 @@ class UcModulesServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/../migrations');
         $this->loadViewsFrom(__DIR__ . '/../resources/views/', 'modules');
         $this->mergeConfigFrom(__DIR__.'/../config/myConstants.php','modules');
+
+        
+        $this->publishes(
+            [__DIR__ . '/../resources/views' => resource_path('views'),],
+            'views'
+        );
+
+        $this->publishes( [__DIR__ . '/../lang' => lang_path(''),],
+           
+        'lang'
+    );
+
+        $this->publishes(
+            [__DIR__ . '/../config/myConstants.php' => config_path('myConstants.php'),],
+            'config'
+        );
+
+        $this->publishes([__DIR__.'/../routes/test.php'=>base_path('routes/test.php'),
+        'routes']);
+
+	
+        $this->publishes(
+            [__DIR__ . '/../database/' => database_path(''),],
+            'database'
+        );
+
+        $this->publishes([
+            __DIR__.'/Http/Livewire' => app_path('Livewire'),
+        ]);
+
+        $this->publishes([
+            __DIR__.'/Http/Middleware' => app_path('/Http/Middleware'),
+        ]);
+
+        $this->publishes([
+            __DIR__.'/Http/Models' => app_path('Models'),
+        ]);
+    
+
+        $this->publishes([  __DIR__.'/Http/Models/User.php' => app_path('Models/User.php'),],
+        'userModel'
+      );
+
+      $this->publishes([
+        __DIR__.'/../routes/user.php' => base_path('routes/user.php'),
+    ]);
+
+  
+
     }
 }
