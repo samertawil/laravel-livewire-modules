@@ -3,7 +3,7 @@
     "description": "laravel livewire user config modules",
     "type": "library",
     "require": {
-        "livewire/livewire": "3.5"
+        "livewire/livewire": "3.5.18"
     },
     "license": "MIT",
     "autoload": {
