@@ -73,7 +73,15 @@ class UcModulesServiceProvider extends ServiceProvider
         __DIR__.'/../routes/user.php' => base_path('routes/user.php'),
     ]);
 
-  
+    $this->publishes([
+        __DIR__.'/Http/helper' => app_path('helper'),
+    ],'helper');
+
+    $this->publishes([
+        __DIR__.'/Http/Traits' => app_path('Traits'),
+    ],'Traits');
+
+
 
     }
 }
