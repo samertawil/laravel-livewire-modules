@@ -43,12 +43,12 @@ class UcModulesServiceProvider extends ServiceProvider
             'config'
         );
 
-        $this->publishes([__DIR__.'/../routes/test.php'=>base_path('routes/test.php'),
-        'routes']);
+        $this->publishes([__DIR__.'/../routes/user.php'=>base_path('routes/user.php'),
+        ],'routes');
 
 	
         $this->publishes(
-            [__DIR__ . '/../database/' => database_path(''),],
+            [__DIR__ . '/../database/' => database_path(),],
             'database'
         );
 
