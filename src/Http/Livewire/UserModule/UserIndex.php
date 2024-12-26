@@ -116,8 +116,8 @@ class UserIndex extends Component
 
     public function render()
     {
-        $title = 'المستخدمين';
-        $pageTitle = 'المستخدمين';
+           $title = __('ucModule.users') ;
+        $pageTitle =  __('ucModule.users') ;
 
         $users = User::SearchName($this->search)
             ->SearchUserType($this->searchUsertype)
