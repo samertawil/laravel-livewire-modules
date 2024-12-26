@@ -4,6 +4,7 @@
     "type": "library",
     "require": {
         "livewire/livewire": "3.5.18"
+		 "yoeunes/toastr": "^3.0"
     },
     "license": "MIT",
     "autoload": {
