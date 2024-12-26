@@ -48,7 +48,7 @@ class UcModulesServiceProvider extends ServiceProvider
 
 	
         $this->publishes(
-            [__DIR__ . '/../database/' => database_path(),],
+            [__DIR__ . '/../database/' => database_path(''),],
             'database'
         );
 
@@ -61,11 +61,11 @@ class UcModulesServiceProvider extends ServiceProvider
         ]);
 
         $this->publishes([
-            __DIR__.'/Http/Models' => app_path('Models'),
-        ]);
+            __DIR__.'/Models' => app_path('Models'),
+        ],'models);
     
 
-        $this->publishes([  __DIR__.'/Http/Models/User.php' => app_path('Models/User.php'),],
+        $this->publishes([  __DIR__.'/Models/User.php' => app_path('Models/User.php'),],
         'userModel'
       );
 
