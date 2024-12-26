@@ -62,7 +62,7 @@ class UcModulesServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/Models' => app_path('Models'),
-        ],'models);
+        ],'models');
     
 
         $this->publishes([  __DIR__.'/Models/User.php' => app_path('Models/User.php'),],
