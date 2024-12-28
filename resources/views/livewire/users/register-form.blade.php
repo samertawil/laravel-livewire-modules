@@ -6,14 +6,14 @@
                      <div class="card">
 
                          @if (!Auth::check())
-                             <div class="card-header">تسجيل حساب جديد</div>
+                             <div class="card-header"><span class="h5">{{__('ucModule.create new account')}}</span></div>
                          @endif
 
                          <div class="card-body">
 
                              <form wire:submit='register'>
 
-                                 <x-input wire:model.live='user_name' name="user_name" label="yes" dir="ltr"
+                                 <x-input wire:model='user_name' name="user_name" label="yes" dir="ltr"
                                      divlclass='col-lg-12'></x-input>
 
                                  <x-input wire:model='name' name="name" label="yes"
@@ -34,12 +34,13 @@
                                      id="password_confirmation" type="password" label="yes"
                                      autocomplete="new-password" divlclass='col-lg-12'></x-input>
 
-
-                                 <x-button :name="__('mytrans.register_new_account')" class="bg-primary text-white"
-                                     divlclass="d-grid gap-2"></x-button>
+                                
+                                 <x-button label="register_new_account" class="bg-primary text-white mx-3"
+                                     divlclass="d-grid gap-2" wire:click='register'></x-button>
 
                                  @if (!Auth::check())
-                                     <x-cancel-back :route="route('login')" wire:navigate></x-cancel-back>
+                                 {{-- :route="route('login')" --}}
+                                     <x-cancel-back  wire:navigate class=" mx-3"></x-cancel-back>
                                  @endif
                                  
                              </form>

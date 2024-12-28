@@ -21,7 +21,7 @@
         <div   @class([ "row form-group align-items-center justify-content-between mb-3" , $divlclass  ]) >
 
         @if ($label)
-        <label for="{{ $id }}" @class(["col-form-label   $labelclass "])>{{$labelname?$labelname: __("mytrans.$name") }}
+        <label for="{{ $id }}" @class(["col-form-label   $labelclass "])>{{$labelname?$labelname: __("ucModule.$name") }}
             @if($req)
             <span class="text-danger">*</span>
             @endif
@@ -30,7 +30,7 @@
 
 
     <div class="col-4  text-center">
-        <label for="" class="mb-2">{{ __('mytrans.year') }}</label>
+        <label for="" class="mb-2">{{ __('ucModule.year') }}</label>
         <select name="{{$nameYear}}" id="" wire:model="{{$nameYear}}"
             class="form-select @error('{{$nameYear}}') is-invalid @enderror">
             <option value="" hidden></option>
@@ -50,7 +50,7 @@
 
 
     <div class="col-4   text-center">
-        <label for="" class="mb-2">{{ __('mytrans.month') }}</label>
+        <label for="" class="mb-2">{{ __('ucModule.month') }}</label>
         <select name="{{$nameMonth}}" id=""  wire:model='month'
             class="form-select @error('month') is-invalid @enderror">
             <option value="" hidden></option>
@@ -68,7 +68,7 @@
         @enderror
     </div>
     <div class="col-4   text-center">
-        <label for="" class="mb-2">{{ __('mytrans.day') }}</label>
+        <label for="" class="mb-2">{{ __('ucModule.day') }}</label>
         <select name="{{$nameDay}}" id=""  wire:model='day'
             class="form-select @error('day') is-invalid @enderror">
             <option value="" hidden></option>

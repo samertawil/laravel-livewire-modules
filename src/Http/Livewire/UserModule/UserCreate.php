@@ -1,9 +1,10 @@
 <?php
 
-namespace uc\modules\Http\Livewire\UserModule;
+namespace  App\Livewire\UserModule ;
 
 use Livewire\Component;
 use Livewire\Attributes\Title;
+use Livewire\Attributes\Layout;
 
 
 class UserCreate extends Component
@@ -20,16 +21,13 @@ class UserCreate extends Component
     public $day = '';
 
 
-
-
-
-
-    #[Title('الحسابات والمستحدمين')]
+    
+    #[Layout('components.layouts.metronic7-simple-app')]
     public function render()
     {
 
-        $pageTitle='الحسابات والمستخدمين';
+       $pageTitle=__('ucModule.users');
         
-        return view('users.user-create')->layoutData(['pageTitle'=>$pageTitle]);
+        return view('livewire.users.user-create')->layoutData(['pageTitle'=>$pageTitle,'Title'=>$pageTitle]);
     }
 }

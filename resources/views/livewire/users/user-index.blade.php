@@ -1,22 +1,29 @@
-<div >
+<div>
+
 
 
     <x-slot:crumb>
-
-        <x-breadcrumb button data-target="#UserCreateModel1" data-toggle="modal" name="انشاء مستخدم جديد">
-
+        <x-breadcrumb   button   data-target="#UserCreateModel1" data-toggle="modal" :label="__('ucModule.create new account')">
+            <ul class="breadcrumb breadcrumb-transparent breadcrumb-dash font-weight-bold p-0 my-2 font-size-sm">
+                <li class="breadcrumb-item"><a href="" class="text-muted">Apps </a></li>
+                <li class="breadcrumb-item"><a href="" class="text-muted">profile </a></li>
+            </ul>
         </x-breadcrumb>
 
     </x-slot:crumb>
 
+
+
+
     @push('css')
-    <script src="https://cdn.tailwindcss.com"></script>
-@endpush
+        <script src="https://cdn.tailwindcss.com"></script>
+    @endpush
 
 
-    <x-modal idName="UserCreateModel1" title='تسجيل حساب جديد'>
+    <x-modal idName="UserCreateModel1" :title="__('ucModule.create new account')">
 
-        {{-- @livewire('UserModule.register-form') --}}
+        @livewire('UserModule.register-form')
+        {{-- <livewire:UserModel.register-form></livewire:UserModel.register-form> --}}
 
     </x-modal>
 
@@ -26,33 +33,14 @@
 
 
 
-    <div class="row justify-content-between align-items-center">
+<x-search-index-section>
+    
         <div class="col-sm-12 col-md-2">
-            <div> <span class="ml-1">{{__('ucModule.record')}}</span> <label><select wire:model.live='perPage'
-                        class="custom-select custom-select-sm form-control form-control-sm">
-
-                        <option value="10">10</option>
-                        <option value="25">25</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                    </select></label></div>
+            <x-select :options="config('myConstants')['userType']" divWidth="12" :ChoseTitle="__('ucModule.user_type')" wire:model.live="searchUsertype"
+                ChoseTitle="{{ __('ucModule.all') }}"></x-select>
         </div>
 
-
-        <div class="col-sm-12 col-md-2">
-            <x-select :options="config('myConstants')['userType']" divWidth="12" ChoseTitle="نوع المستخدم" wire:model.live="searchUsertype"
-                ChoseTitle="{{__('ucModule.all')}}"></x-select>
-        </div>
-
-        <div class="col-sm-12 col-md-3">
-            <x-input type="search" name="search" placeholder="بحث" divWidth="12" wire:model.live='search'></x-input>
-        </div>
-
-      
-
-    </div>
-
-
+</x-search-index-section>
 
 
     <div class="table-responsive">
@@ -67,8 +55,8 @@
                             sortdir={{ $sortdir }}></x-table-th>
 
                         <x-table-th wire:click="setSortBy('name')" name="name" sortBy={{ $sortBy }}
-                            sortdir={{ $sortdir }}  ></x-table-th>
-                          
+                            sortdir={{ $sortdir }}></x-table-th>
+
                         <x-table-th wire:click="setSortBy('user_type')" name="user_type" sortBy={{ $sortBy }}
                             sortdir={{ $sortdir }}></x-table-th>
 
@@ -77,23 +65,20 @@
                             sortBy={{ $sortBy }} sortdir={{ $sortdir }}></x-table-th>
 
 
-                        <th><span>{{__('ucModule.mobile')}}</span></th>
+                        <th><span>{{ __('ucModule.mobile') }}</span></th>
 
 
-
-
-
-                        <th class="text-center">{{__('ucModule.actions')}}</th>
+                        <th class="text-center">{{ __('ucModule.actions') }}</th>
                     </tr>
                 </thead>
                 <tbody>
 
-         
+
                     @foreach ($users as $key => $user)
-                        <td>{{ $key + 1 }}
-   
-                        </td>
+                        <td>{{ $key + 1 }} </td>
+
                         <td>{{ $user->user_name }}</td>
+
                         @if ($editUserId === $user->id)
                             <td>
                                 <input wire:model='editName' placeholder="..." class="form-control bg-white">
@@ -120,8 +105,8 @@
                             <td>
                                 <select wire:model="editActiovation" class="form-control bg-white">
 
-                                    <option value="1">فعال</option>
-                                    <option value="0">غير فعال</option>
+                                    <option value="1">{{ __('ucModule.active') }}</option>
+                                    <option value="0">{{ __('ucModule.not active') }}</option>
                                 </select>
                             </td>
                         @else
@@ -135,7 +120,7 @@
                                     'bg-danger dot-label' => $user->user_activation == 0,
                                     'bg-success dot-label' => $user->user_activation == 1,
                                 ])></div>
-                                {{ $user->user_activation == 1 ? 'فعال' : 'غير فعال' }}
+                                {{ $user->user_activation == 1 ? __('ucModule.active') : __('ucModule.not active') }}
                             </td>
                         @endif
 
@@ -160,9 +145,10 @@
 
                                 <x-modal idName="Userpreview{{ $user->id }}">
 
-                                    {{ __('mytrans.created_at') }} : {{ myDateStyle1($user->created_at) }}</br>
-                                    {{ __('mytrans.email') }} : {{ $user->email }}</br>
-                                    {{ __('mytrans.need_to_change') }} : {{ $user->need_to_change==1?'نعم' : 'لا' }}
+                                    {{ __('ucModule.created_at') }} : {{ myDateStyle1($user->created_at) }}</br>
+                                    {{ __('ucModule.email') }} : {{ $user->email }}</br>
+                                    {{ __('ucModule.need_to_change') }} :
+                                    {{ $user->need_to_change == 1 ? __('ucModule.yes') : __('ucModule.no') }}
 
                                 </x-modal>
 
@@ -170,13 +156,21 @@
                                 <x-actions edit wire:loading.attr='disabled'
                                     wire:click.prevent='edit({{ $user->id }})'></x-actions>
 
-                                    <a wire:loading.attr='disabled' class="btn btn-lg text-danger "
-                                    wire:confirm.prompt='هل انت متأكد؟  \n للتاكيد الرجاء كتابة اسم المستخدم|{{ $user->user_name }}'
-                                    wire:click.prevent='destroy({{ $user->id }})'> <i class="ti-trash text-danger"></i> </a>
+                                <a wire:loading.attr='disabled' class="btn btn-lg text-danger "
+                                    wire:confirm.prompt="{{ __('ucModule.please insert user name for del') }}\n|{{ $user->user_name }}"
+                                    wire:click.prevent='destroy({{ $user->id }})'> <i
+                                        class="ti-trash text-danger"></i> </a>
+
+
+                                        {{-- <a wire:loading.attr='disabled' class="btn btn-lg text-danger "
+                                        wire:confirm.prompt='هل انت متأكد؟  \n للتاكيد الرجاء كتابة اسم المستخدم|{{ $user->user_name }}'
+                                        wire:click.prevent='destroy({{ $user->id }})'> <i
+                                            class="ti-trash text-danger"></i> </a> --}}
+
 
                             @else
-                                <x-actions make wire:loading.attr='disabled' wire:click='update'></x-actions>
-                                <x-actions cancel wire:click='cancelEdit'></x-actions>
+                                <x-actions make wire:loading.attr='disabled' wire:click.prevent='update'></x-actions>
+                                <x-actions cancel wire:click.prevent='cancelEdit'></x-actions>
                             @endif
 
 
@@ -190,10 +184,9 @@
 
                                 <div class="dropdown-menu tx-13 ">
                                     <a class="dropdown-item " href="#"
-                                        wire:click='resetPass({{ $user->id }})'> طلب كلمة مرور جديدة</a>
-                                       
-                                        <a class="dropdown-item " href="#"
-                                       > منح الصلاحيات</a>
+                                        wire:click.prevent='resetPass({{ $user->id }})'>{{__('ucModule.request_need_password')}}</a>
+
+                                    <a class="dropdown-item " href="#">{{__('ucModule.grant_privileges')}}</a>
                                 </div>
                             </div>
 

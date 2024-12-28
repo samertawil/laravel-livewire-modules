@@ -1,6 +1,6 @@
 <?php
 
-namespace uc\modules\Http\Livewire;
+namespace  App\Livewire\UserModule ;
 
  use App\Models\User; 
 use Livewire\Component;
@@ -35,6 +35,10 @@ class RegisterForm extends Component
     
     public function register()
     {
+       
+          $this->validate();
+
+         
 
            $user = User::create([
             'user_name' => $this->user_name,
@@ -54,14 +58,12 @@ class RegisterForm extends Component
     }
 
 
-    public function updated() {
-        $this->validate();
-    }
-
+  
 
     public function render()
     {
       
-        return view('users.register-form');
+        return view('livewire.users.register-form');
+       
     }
 }

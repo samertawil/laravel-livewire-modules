@@ -6,9 +6,11 @@
 
 *  php artisan vendor:publish --provider="uc\modules\UcModulesServiceProvider"
 
-*  include __DIR__.'/user.php';
+ *  include __DIR__.'/user.php';
 
- *                ,
+    *  include __DIR__.'/setting.php';
+
+                ,
         "files": [
             "app/helper/uploads.php",
             "app/helper/generalfunctions.php"
@@ -17,3 +19,5 @@
 * composer dump-autload;
 
 * php artisan vendor:publish --provider="uc\modules\UcModulesServiceProvider" --tag="userModel" --force
+
+* php artisan flasher:install

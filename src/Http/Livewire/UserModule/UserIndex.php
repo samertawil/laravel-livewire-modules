@@ -6,19 +6,21 @@ namespace  App\Livewire\UserModule ;
 
  
  
+use App\Models\User; 
 use Livewire\Component;
 use App\Services\FlashMsg;
-use App\Models\User; 
+use App\Traits\FlashMsgTraits;
 use Livewire\Attributes\Url;
 use Livewire\WithPagination;
 use Livewire\Attributes\Rule;
-use App\Traits\FlashMsgTraits;
+use Livewire\Attributes\Layout;
 use uc\modules\Traits\SortTrait;
 use Illuminate\Support\Facades\Hash;
 
 class UserIndex extends Component
 {
     use SortTrait;
+    use FlashMsgTraits;
 
 
     #[Url()]
@@ -54,7 +56,7 @@ class UserIndex extends Component
 
     public function edit($id)
     {
-
+       
         $this->editUserId = $id;
         $data = User::find($id);
 
@@ -67,13 +69,14 @@ class UserIndex extends Component
 
     public function cancelEdit()
     {
+       
         $this->reset('editUserId');
     }
 
     public function update()
     {
 
-
+      
         $user = User::find($this->editUserId);
 
         $this->validate();
@@ -114,9 +117,10 @@ class UserIndex extends Component
         FlashMsgTraits::created($msgType = 'success', $msg = ' تم طلب اعادة تعيين كلمة المرور - كلمة المرور المؤقتة هي 12345');
     }
 
+    #[Layout('components.layouts.metronic7-simple-app')]
     public function render()
     {
-           $title = __('ucModule.users') ;
+        $title = __('ucModule.users') ;
         $pageTitle =  __('ucModule.users') ;
 
         $users = User::SearchName($this->search)

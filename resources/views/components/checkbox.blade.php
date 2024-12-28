@@ -24,7 +24,7 @@
 
              @if ($label)
                  <label for="{{ $id }}"
-                     @class(["form-check-label   $labelclass "])>{{ $labelname ? $labelname : __("mytrans.$name") }}</label>
+                     @class(["form-check-label   $labelclass "])>{{ $labelname ? $labelname : __("ucModule.$name") }}</label>
              @endif
 
 

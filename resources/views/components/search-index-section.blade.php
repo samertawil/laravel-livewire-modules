@@ -11,7 +11,7 @@
 
 <div class="row justify-content-between align-items-center">
     <div class="col-sm-12 col-md-2">
-        <div> <span class="ml-1">السطور</span> <label><select wire:model.live='perPage'
+        <div> <span class="ml-1">{{ __('ucModule.record') }}</span> <label><select wire:model.live='perPage'
                     class="custom-select custom-select-sm form-control form-control-sm">
                     <option value="5">5</option>
                     <option value="10">10</option>
@@ -22,7 +22,7 @@
     </div>
 
     <div class="col-sm-12 col-md-3">
-        <x-input  type="search" name="search" placeholder="بحث" divWidth="12" wire:model.live='search'></x-input>
+        <x-input  type="search" name="search" :placeholder="__('ucModule.search')" divWidth="12" wire:model.live='search'></x-input>
     </div>
 
     {{$slot??''}}

@@ -12,15 +12,18 @@
         <div class="modal-dialog modal-{{ $width }} {{ $modalType }} " role="document">
             <div class="modal-content modal-content-demo  ">
                 <div class="modal-header">
-                    <h6 class="modal-title text-dark">{{ $title }}</h6><button aria-label="Close" class="close"
-                        data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                    <h6 class="modal-title text-dark">{{ $title }}</h6>
+                    <button aria-label="Close" class="close"
+                        data-dismiss="modal" type="button">x</button>
                 </div>
-                <div class="modal-body">
 
+                <div class="modal-body">
                     {{ $slot }}
                 </div>
+
                 <div class="modal-footer">
-                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">اغلاق</button>
+                    <button class="btn ripple btn-secondary" data-dismiss="modal"
+                        type="button">{{ __('ucModule.close') }}</button>
                 </div>
             </div>
         </div>

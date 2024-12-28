@@ -1,47 +1,37 @@
-
-
 @props([
-    'CurrentPageTitle'=>'',
-    'button'=>'',
+    'CurrentPageTitle' => '',
+    'button' => '',
     'type' => '',
-    'name' => 'حفظ',
-    'divlclass'=>'',
-    'route'=>null,
-    'iclass'=>'',
- ])
- 
+    'label' => __('front.save'),
+    'divlclass' => '',
+    'route' => null,
+    'iclass' => '',
+    'crumb'=>null,
+])
 
 
-<div class="  d-md-flex d-block align-items-center justify-content-between my-2 page-header-breadcrumb">
-    <div class="my-auto">
-        {{-- <h5 class="page-title fs-21 mb-1 mr-3 ">{{$CurrentPageTitle}}</h5> --}}
-        <nav>
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="javascript:void(0);">Pages</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Profile</li>
-            </ol>
-        </nav>
-    </div>
+
+<div class="w-100 d-flex d-block align-items-center justify-content-between my-2 page-header-breadcrumb">
+    
+    
+   {{$slot ?? ''}}
 
 
-    @if($button)
- 
- 
-<div @class(['text-left ml-1 pointer', $divlclass])> 
+    @if ($button)
+        <div @class(['text-left ml-1 pointer px-4', $divlclass , ])>
 
-    <a   @if($route) href={{$route}} @endif
-        {{$attributes->class(['btn btn-md bg-primary text-light',  
-             ]) }} 
-              >{{$name}}
-   
-    </a>
+            <a @if ($route) href={{ $route }} @endif
+                {{ $attributes->class(['btn btn-md btn-primary text-light px-5 ']) }}>{{ $label }}
 
-</div>
+            </a>
 
+        </div>
     @endif
-   
+
 </div>
 
 
-
- 
+{{-- <ul class="breadcrumb breadcrumb-transparent breadcrumb-dash font-weight-bold p-0 my-2 font-size-sm">
+    <li class="breadcrumb-item"><a href="" class="text-muted">Apps </a></li>
+    <li class="breadcrumb-item"><a href="" class="text-muted">profile </a></li>
+</ul> --}}

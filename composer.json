@@ -3,8 +3,8 @@
     "description": "laravel livewire user config modules",
     "type": "library",
     "require": {
-        "livewire/livewire": "3.5.18"
-		 "yoeunes/toastr": "^3.0"
+        "livewire/livewire": "3.5.18",
+		 "yoeunes/toastr": "^3.1"
     },
     "license": "MIT",
     "autoload": {

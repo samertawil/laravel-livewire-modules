@@ -29,7 +29,7 @@
 
 
     @if ($label)
-        <label for="{{ $id }}" @class(["col-form-label   $labelclass "])>{{ $labelname ? $labelname : __("mytrans.$name") }}
+        <label for="{{ $id }}" @class(["col-form-label   $labelclass "])>{{ $labelname ? $labelname : __("ucModule.$name") }}
             @if ($req)
                 <span class="text-danger">*</span>
             @endif

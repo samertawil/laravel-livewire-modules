@@ -1,11 +1,13 @@
 @props([
     'route'=>'',
-    'name'=>'إلغاء وروجوع',
+    'label'=>null,
 ]) 
 
 <div class="text-end">
     <a href="{{$route}}"  
     {{$attributes->class(['text-decoration-none text-end', ])}} >
    
-     {{$name}} </a>
+    {{$label ? __("ucModule.$label") : __("ucModule.cancel_back")}}  </a>
 </div>
+
+ 

@@ -12,5 +12,6 @@ use App\Livewire\UserModule\UserIndex;
 Route::get('/users/index', UserIndex::class)->name('user.index');
 Route::get('/users/create', UserCreate::class)->name('user.create');
  
+ 
 
 
