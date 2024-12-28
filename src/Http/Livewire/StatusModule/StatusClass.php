@@ -119,7 +119,7 @@ class  StatusClass extends Component
     }
 
 
-    #[Layout('components.layouts.metronic7-simple-app')]
+ 
     public function render()
     {
         // if(Gate::denies('status.index')) {
