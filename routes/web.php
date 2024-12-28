@@ -1,9 +1,7 @@
 <?php
 
-use App\Livewire\Test;
 use Livewire\Livewire;
 use Illuminate\Support\Facades\Route;
-use App\Livewire\UserModule\UserIndex;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 

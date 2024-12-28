@@ -1,20 +1,19 @@
 @props([
     'type' => '',
-    'name' => 'حفظ',
-    'divlclass'=>'',
-    'iclass'=>'',
-    '$iclassName'=>''
+    'label' => null,
+    'divlclass' => '',
+    'iclass' => '',
+    '$iclassName' => '',
 ])
 
 
-<div @class(['my-4 text-left mx-1 ', $divlclass])> 
+<div @class(['my-4 ', $divlclass])>
 
     <button type="{{ $type }}"
-        {{$attributes->class(['btn btn-md btn-info',
-             ]) }}  >{{$name}}
-               @if($iclass)
-               <i class="{{$iclassName}}"></i>
-               @endif
+        {{ $attributes->class(['btn btn-md btn-info']) }}>{{ $label ? __("ucModule.$label") :  __("ucModule.save") }}
+        @if ($iclass)
+            <i class="{{ $iclassName }}"></i>
+        @endif
     </button>
 
 </div>

@@ -2,7 +2,7 @@
     'CurrentPageTitle' => '',
     'button' => '',
     'type' => '',
-    'label' => __('front.save'),
+    'label' => __('ucModule.save'),
     'divlclass' => '',
     'route' => null,
     'iclass' => '',

@@ -43,6 +43,7 @@
 
 
     @if ($cancel)
+    
         <a href="#" class="btn btn-lg text-warning" {{ $attributes }}>
             <i class="ti-back-right text-warning"></i>
 
