@@ -44,6 +44,23 @@ return [
     'data_created_success'=>'Data is created successfully',
     'data_edited_success'=>'Data is edited successfully',
     'data_deleted_success'=>'Data is deleted successfully',
-    
+
+    'module_createion_name'=>'Create module name',
+    'module_name'=>'Module name',
+    'system_name'=>'System name',
+   
+    'active_status'=>'Activation status',
+    'create_new_status'=>'Create new', 
+    'status_name'=>'Status name',
+    'p_id'=>'Main status name',
+    'p_id_sub'=>'Sub status name',
+    'notes'=>'Notes',
+    'page_name'=>'Page name',
+    'route_system_name'=>'Main link',
+    'route_name'=>'Page link',
+    'delete'=>'Delete',
+    'used_in_system_id'=>'Module Name',
+    'choose one'=>'Choose',
+    'status system'=>'Status system',
     
 ];

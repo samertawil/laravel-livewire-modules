@@ -43,5 +43,23 @@ return [
     'data_created_success'=>'تم حفظ البيانات بنجاح',
     'data_edited_success'=>'تم تعديل البيانات بنجاح',
     'data_deleted_success'=>'تم حذف البيانات بنجاح',
+    'notes'=>'ملاحظات',
+      'module_createion_name'=>'تكوين مديولات النظام',
+      'module_name'=>'اسم المديول',
+      'system_name'=>'اسم النظام',
+       
+      'active_status'=>'حالة تفعيل النظام',
+      'create_new_status'=>'ادخال ثابت جديد',
+      'status_name'=>'اسم الثابت',
+      'p_id'=>'ثابت رئيسي',
+      'p_id_sub'=>'ثابت فرعي',
+      'page_name'=>'اسم الصفحة',
+      'route_system_name'=>'اسم الرابط الرئيسي',
+      'route_name'=>'رابط الصفحة',
+      'delete'=>'مسح',
+      'used_in_system_id'=>'اسم المديول التابع له',
+      'choose one'=>'اختر',
+      'status system'=>'نظام الثوابت',
+    
 
 ];

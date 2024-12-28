@@ -25,6 +25,8 @@ Route::group( [ 'prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 
     include __DIR__.'/user.php';
 
      include __DIR__.'/setting.php';
+	 
+	   include __DIR__.'/status.php';
 
     });
 

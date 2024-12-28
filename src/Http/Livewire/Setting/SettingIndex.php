@@ -50,7 +50,7 @@ class SettingIndex extends Component
     public function update()
     {
 
-        //  $this->validate(SettingRequest::rules());
+        $this->validate();
 
         $data = Setting::findOrfail($this->editSettingId);
 
@@ -76,7 +76,7 @@ class SettingIndex extends Component
         $this->reset('editSettingId');
     }
 
-    #[Layout('components.layouts.metronic7-simple-app')]
+    //#[Layout('components.layouts.metronic7-simple-app')]
     public function render()
     {
         $pageTitle= __('ucModule.setting')  ; 
