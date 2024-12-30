@@ -9,20 +9,20 @@ trait FlashMsgTraits
     public static function created($msgType = 'success', $msg = 'create' )
     {
         
-    
+      
         if ($msg == 'create') {
             return toastr()->progressBar(false)->timeOut(1000) 
-            ->$msgType('تم حفظ البيانات بنجاح');
+            ->$msgType(__('ucModule.data_created_success'));
         }
 
          else if  ($msg == 'update') {
             return toastr()->progressBar(false)->timeOut(1000) 
-            ->$msgType('تم تعديل البيانات بنجاح');
+            ->$msgType(__('ucModule.data_edited_success'));
         }
 
         else if ($msg == 'destroy') {
             return toastr()->progressBar(false)->timeOut(1000) 
-            ->$msgType('تم حذف البيانات بنجاح');
+            ->$msgType(__('ucModule.data_deleted_success'));
         }
 
        else {

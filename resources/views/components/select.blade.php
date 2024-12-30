@@ -14,7 +14,7 @@
     'id' => '',
     'divWidth' => '3',
     'divlclass' => '',
-    'ChoseTitle' => 'اختار',
+    'ChoseTitle' => __('ucModule.choose one'),
     'divId'=>null,
     'jsSelect2'=>null,
     'wireIgone'=>null,

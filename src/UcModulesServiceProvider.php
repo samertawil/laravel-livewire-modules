@@ -51,6 +51,9 @@ class UcModulesServiceProvider extends ServiceProvider
 
 		        $this->publishes([__DIR__.'/../routes/status.php'=>base_path('routes/status.php'),
         ],'routes');
+		
+		   $this->publishes([__DIR__.'/../routes/permission.php'=>base_path('routes/permission.php'),
+        ],'routes');
 	
         $this->publishes(
             [__DIR__ . '/../database/' => database_path(''),],
@@ -83,6 +86,9 @@ class UcModulesServiceProvider extends ServiceProvider
         __DIR__.'/Traits' => app_path('Traits'),
     ],'Traits');
 
+  $this->publishes([
+        __DIR__.'/Services' => app_path('Services'),
+    ],'Services');
 
 
     }

@@ -117,7 +117,7 @@ class UserIndex extends Component
         FlashMsgTraits::created($msgType = 'success', $msg = ' تم طلب اعادة تعيين كلمة المرور - كلمة المرور المؤقتة هي 12345');
     }
 
-   // #[Layout('components.layouts.metronic7-simple-app')]
+    #[Layout('components.layouts.metronic7-simple-app')]
     public function render()
     {
         $title = __('ucModule.users') ;

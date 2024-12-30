@@ -60,6 +60,21 @@ return [
       'used_in_system_id'=>'اسم المديول التابع له',
       'choose one'=>'اختر',
       'status system'=>'نظام الثوابت',
-    
+      'create ability'=>'انشاء صلاحية',
+      'ability_name'=>'اسم الصلاحية',
+      'ability_description'=>'وصف الصلاحية',
+      'url'=>'الرابط',
+      'activation'=>'التفعيل',
+      'ex_ability_desc'=>'مثال : انشاء مستخدم',
+      'clear'=>'مسح الحقول',
+      'create new role'=>'انشاء مجموعة صلاحيات جديدة',
+      'edit role'=>'تعديل مجموعة صلاحيات',
+      'abilities'=>'الصلاحيات',
+      'group name'=>'اسم المجموعة',
+      'role group'=>'مجموعات / صلاحيات',
+      'module_id'=>'النظام المستخدم',
+      'add new module'=>'يمكنك اضافة نظام جديد للصلاحيات من ',
+      'here'=>'هنا',
+      'user role'=>'صلاحيات المستخدمين',
 
 ];

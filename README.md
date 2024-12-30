@@ -12,6 +12,8 @@
  *  include __DIR__.'/user.php';
 
     *  include __DIR__.'/setting.php';
+	 *  include __DIR__.'/permission.php';
+	
 	
 	    </span></pre>include __DIR__.'/status.php';</span></pre>
 

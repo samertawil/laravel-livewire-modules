@@ -1,6 +1,6 @@
 <?php
 
-namespace uc\modules\Traits;
+namespace App\Traits;
 
 use Livewire\Attributes\Url;
 
