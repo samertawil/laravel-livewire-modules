@@ -9,13 +9,7 @@
 
 * php artisan migrate;
 
- *  include __DIR__.'/user.php';
 
-    *  include __DIR__.'/setting.php';
-	 *  include __DIR__.'/permission.php';
-	
-	
-	    </span></pre>include __DIR__.'/status.php';</span></pre>
 
   *               ,
         "files": [
@@ -32,3 +26,22 @@
 * php artisan flasher:install
 
 <pre><span>php artisan db:seed StatusSeeder</span></pre>
+
+<pre><span> Route::group( [ 'prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ] ], function(){
+
+    Livewire::setUpdateRoute(function ($handle) {
+        return Route::post('/livewire/update', $handle);
+    });
+
+    
+     Route::get('test',Test::class);
+    
+     include __DIR__.'/user.php';
+
+     include __DIR__.'/setting.php';
+	 
+	 include __DIR__.'/status.php';
+       
+	 include __DIR__.'/permission.php';
+
+    });</span></pre>

@@ -186,7 +186,7 @@
                                     <a class="dropdown-item " href="#"
                                         wire:click.prevent='resetPass({{ $user->id }})'>{{__('ucModule.request_need_password')}}</a>
 
-                                    <a class="dropdown-item " href="#">{{__('ucModule.grant_privileges')}}</a>
+                                    <a class="dropdown-item " href="{{route('user-roles.create', $user->id )}}">{{__('ucModule.grant_privileges')}}</a>
                                 </div>
                             </div>
 
