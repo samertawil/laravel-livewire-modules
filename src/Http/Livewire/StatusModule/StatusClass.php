@@ -6,13 +6,13 @@ namespace App\Livewire\StatusModule;
 
 use App\Models\Status;
 use Livewire\Component;
+use App\Traits\SortTrait;
 use Livewire\Attributes\Url;
 use Livewire\WithPagination;
 use App\Models\SettingSystem;
 use App\Traits\FlashMsgTraits;
 use Illuminate\Validation\Rule;
 use Livewire\Attributes\Layout;
-use uc\modules\Traits\SortTrait;
 use App\Http\Requests\StatusRequest;
 use App\Services\CacheStatusModelServices;
 

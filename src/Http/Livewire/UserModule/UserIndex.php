@@ -8,13 +8,13 @@ namespace  App\Livewire\UserModule ;
  
 use App\Models\User; 
 use Livewire\Component;
+use App\Traits\SortTrait;
 use App\Services\FlashMsg;
-use App\Traits\FlashMsgTraits;
 use Livewire\Attributes\Url;
 use Livewire\WithPagination;
 use Livewire\Attributes\Rule;
+use App\Traits\FlashMsgTraits;
 use Livewire\Attributes\Layout;
-use uc\modules\Traits\SortTrait;
 use Illuminate\Support\Facades\Hash;
 
 class UserIndex extends Component

@@ -4,13 +4,12 @@ namespace App\Livewire\Setting;
 
 use App\Models\Setting;
 use Livewire\Component;
-
+use App\Traits\SortTrait;
 use Livewire\Attributes\Url;
 use Livewire\WithPagination;
 use Livewire\Attributes\Rule;
 use Livewire\Attributes\Title;
-use Livewire\Attributes\Layout;
-use uc\modules\Traits\SortTrait;
+ use Livewire\Attributes\Layout;
 use Livewire\Attributes\Validate;
 use App\Http\Requests\SettingRequest;
 
