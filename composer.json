@@ -1,6 +1,6 @@
 {
     "name": "laravel-livewire/uc-modules",
-    "description": "laravel livewire user config modules",
+    "description": "laravel livewire user primary modules",
     "type": "library",
     "require": {
         "livewire/livewire": "3.5.18",
