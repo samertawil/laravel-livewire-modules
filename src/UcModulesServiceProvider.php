@@ -54,6 +54,9 @@ class UcModulesServiceProvider extends ServiceProvider
 		
 		   $this->publishes([__DIR__.'/../routes/permission.php'=>base_path('routes/permission.php'),
         ],'routes');
+		
+				   $this->publishes([__DIR__.'/../routes/citzenServices.php'=>base_path('routes/citzenServices.php'),
+        ],'routes');
 	
         $this->publishes(
             [__DIR__ . '/../database/' => database_path(''),],
