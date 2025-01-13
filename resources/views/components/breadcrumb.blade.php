@@ -14,7 +14,12 @@
 <div class="w-100 d-flex d-block align-items-center justify-content-between my-2 page-header-breadcrumb">
     
     
-   {{$slot ?? ''}}
+  
+    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dash font-weight-bold p-0 my-2 font-size-sm">
+        <li class="breadcrumb-item"><a href="{{route('home')}}" class="text-muted">{{__('ucModule.home page')}} </a></li>
+        {{$slot ?? ''}}
+    </ul>
+       
 
 
     @if ($button)

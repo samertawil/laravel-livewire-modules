@@ -5,11 +5,11 @@
 
     <x-slot:crumb>
         <x-breadcrumb   button   data-target="#UserCreateModel1" data-toggle="modal" :label="__('ucModule.create new account')">
-            <ul class="breadcrumb breadcrumb-transparent breadcrumb-dash font-weight-bold p-0 my-2 font-size-sm">
+           
                 <li class="breadcrumb-item"><a href="{{route('user.index')}}" class="text-muted">{{__('ucModule.users')}} </a></li>
                 <li class="breadcrumb-item"><a href="{{route('ability.index')}}" class="text-muted">{{__('ucModule.abilities')}} </a></li>
                 <li class="breadcrumb-item"><a href="{{route('role.index')}}" class="text-muted">{{__('ucModule.role group')}} </a></li>
-            </ul>
+           
         </x-breadcrumb>
 
     </x-slot:crumb>

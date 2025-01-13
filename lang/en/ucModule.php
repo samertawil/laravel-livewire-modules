@@ -78,4 +78,5 @@ return [
    'add new module'=>'You can add new module from',
    'here'=>'Here',
    'user role'=>'User roles',
+   'home page'=>'Home page',
 ];
