@@ -1,10 +1,10 @@
 <div>
 
     <x-slot:crumb>
-        <x-breadcrumb   button   data-target="#UserCreateModel1" data-toggle="modal" :label="__('PFBS.create new account')">
+        <x-breadcrumb  >
           
-       <li class="breadcrumb-item"><a href="{{route('citzen.services.index')}}" class="text-muted">{{__('PFBS.users')}} </a></li>
-       <li class="breadcrumb-item"><a href="{{route('citzen.services.resouces')}}" class="text-muted">{{__('PFBS.abilities')}} </a></li>
+            <li class="breadcrumb-item"><a href="{{route('citzen.services.index')}}" class="text-muted">{{__('ucModule.services index')}} </a></li>
+            <li class="breadcrumb-item"><a href="{{route('citzen.services.resouces')}}" class="text-muted">{{__('ucModule.services resource')}} </a></li>
            
         </x-breadcrumb>
 

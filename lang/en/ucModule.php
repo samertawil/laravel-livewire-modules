@@ -79,4 +79,18 @@ return [
    'here'=>'Here',
    'user role'=>'User roles',
    'home page'=>'Home page',
+
+   'add new'=>'Add new',
+   'are you sure'=>'Are you sure?',
+   'created_by'=>'Created by',
+   'export_excel'=>'Export excel',
+   'managment and control'=>'Managment and control',
+   'you have no access'=>'You have no access',
+   'old check data'=>'Old check data',
+   'please insert num of services for del'=>'Please insert number of services for conformation',
+   'url service'=>'Services Url',
+   'from_date'=>'From date',
+    'to_date'=>'To date',
+    'services index'=>'Services index',
+    'services resource'=>'Services resource',
 ];
