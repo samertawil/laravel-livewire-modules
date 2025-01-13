@@ -32,7 +32,7 @@
 
     @if ($del)
         <a href={{ $route }} class="btn btn-lg text-danger "
-                wire:confirm='هل انت متأكد؟'
+                wire:confirm={{__('ucModule.are you sure')}}
             {{ $attributes }}>
 
             <i class="ti-trash text-danger"></i>

@@ -1,22 +1,24 @@
 <div>
 
-     
+
     @push('css')
         <link rel="stylesheet" href="{{ asset('template-assets/myTableResponsive.css') }}">
     @endpush
 
     <x-slot:crumb>
         <x-breadcrumb >
-          
-       <li class="breadcrumb-item"><a href="{{route('citzen.services.index')}}" class="text-muted">{{__('ucModule.services index')}} </a></li>
-       <li class="breadcrumb-item"><a href="{{route('citzen.services.resouces')}}" class="text-muted">{{__('ucModule.services resource')}} </a></li>
-           
+
+            <li class="breadcrumb-item"><a href="{{ route('citzen.services.index') }}"
+                    class="text-muted">{{ __('ucModule.services index') }} </a></li>
+            <li class="breadcrumb-item"><a href="{{ route('citzen.services.resouces') }}"
+                    class="text-muted">{{ __('ucModule.services resource') }} </a></li>
+
         </x-breadcrumb>
 
     </x-slot:crumb>
 
 
-   
+
 
 
     <div class="table-responsive  d-none d-sm-block">
@@ -28,7 +30,7 @@
 
                         <x-table-th wire:click="setSortBy('num')" name="num" sortBy={{ $sortBy }}
                             sortdir={{ $sortdir }} :labelname="__('ucModule.service num')"></x-table-th>
-                           
+
                         <x-table-th wire:click="setSortBy('name')" name="name" sortBy={{ $sortBy }}
                             sortdir={{ $sortdir }} :labelname="__('ucModule.service name')"></x-table-th>
 
