@@ -14,16 +14,16 @@
     <div class="row">
 
         <div class="col-6">
-            <x-input type='number' min='1' wire:model='num' name='num' label :labelname="__('PFBS.service num')"
+            <x-input type='number' min='1' wire:model='num' name='num' label :labelname="__('ucModule.service num')"
                 divWidth='8'></x-input>
 
-            <x-input wire:model='name' name='name' label :labelname="__('PFBS.service name')" divWidth='8'></x-input>
+            <x-input wire:model='name' name='name' label :labelname="__('ucModule.service name')" divWidth='8'></x-input>
 
             <x-input wire:model='url' name='url' label divWidth='8'></x-input>
 
             <x-input wire:model='status_id' name='status_id' label divWidth='8'></x-input>
 
-            <x-input wire:model='Responsible' name='Responsible' :labelname="__('PFBS.services Responsible')" label divWidth='8'></x-input>
+            <x-input wire:model='Responsible' name='Responsible' :labelname="__('ucModule.services Responsible')" label divWidth='8'></x-input>
         </div>
 
         <div class="col-6">
@@ -42,7 +42,7 @@
             <div class="d-md-flex">
 
                 <x-radio wire:model='active' name='active' :value1='1' :value2='0'   label
-                    :labelname="__('PFBS.activation')" :value_title1="__('PFBS.active')" :value_title2="__('PFBS.not active')" divclass="mt-5"></x-radio>
+                    :labelname="__('ucModule.activation')" :value_title1="__('ucModule.active')" :value_title2="__('ucModule.not active')" divclass="mt-5"></x-radio>
 
 
                 <x-input wire:model='route_name' name='route_name' divlclass="mt-4"  label divWidth='5'></x-input>
@@ -55,7 +55,7 @@
     <div class="row">
         <x-textarea wire:model='description' name='description' label divWidth='6' rows='4'></x-textarea>
 
-        <x-textarea wire:model='note' name='note' label :labelname="__('PFBS.note')" divWidth='6' rows='4'></x-textarea>
+        <x-textarea wire:model='note' name='note' label :labelname="__('ucModule.note')" divWidth='6' rows='4'></x-textarea>
     </div>
 
 
@@ -63,7 +63,7 @@
         <div class="card-header">
             <div class="card-title">
                 <h3 class="card-title">
-                    {{ __('PFBS.services conditions') }}
+                    {{ __('ucModule.services conditions') }}
                 </h3>
             </div>
         </div>

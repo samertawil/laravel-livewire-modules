@@ -27,13 +27,13 @@
                     <tr>
 
                         <x-table-th wire:click="setSortBy('num')" name="num" sortBy={{ $sortBy }}
-                            sortdir={{ $sortdir }} :labelname="__('PFBS.service num')"></x-table-th>
+                            sortdir={{ $sortdir }} :labelname="__('ucModule.service num')"></x-table-th>
                            
                         <x-table-th wire:click="setSortBy('name')" name="name" sortBy={{ $sortBy }}
-                            sortdir={{ $sortdir }} :labelname="__('PFBS.service name')"></x-table-th>
+                            sortdir={{ $sortdir }} :labelname="__('ucModule.service name')"></x-table-th>
 
                         <x-table-th wire:click="setSortBy('home_page_order')" name="home_page_order"
-                            sortBy={{ $sortBy }} sortdir={{ $sortdir }} :labelname="__('PFBS.order')"></x-table-th>
+                            sortBy={{ $sortBy }} sortdir={{ $sortdir }} :labelname="__('ucModule.order')"></x-table-th>
 
                         <x-table-th wire:click="setSortBy('active')" name="activation" sortBy={{ $sortBy }}
                             sortdir={{ $sortdir }}></x-table-th>
@@ -45,7 +45,7 @@
                             sortBy={{ $sortBy }} sortdir={{ $sortdir }}></x-table-th>
 
 
-                        <th class="text-center"> <span>{{ __('PFBS.actions') }}</span></th>
+                        <th class="text-center"> <span>{{ __('ucModule.actions') }}</span></th>
 
                     </tr>
 
@@ -76,8 +76,8 @@
                                 <td>
                                     <select wire:model="active" class="form-control bg-white">
 
-                                        <option value="1">{{ __('PFBS.active') }}</option>
-                                        <option value="0">{{ __('PFBS.not active') }}</option>
+                                        <option value="1">{{ __('ucModule.active') }}</option>
+                                        <option value="0">{{ __('ucModule.not active') }}</option>
                                     </select>
                                 </td>
                             @else
@@ -91,7 +91,7 @@
                                         'bg-danger dot-label' => $service->active == 0,
                                         'bg-success dot-label' => $service->active == 1,
                                     ])></div>
-                                    {{ $service->active == 1 ? __('PFBS.active') : __('PFBS.not active') }}
+                                    {{ $service->active == 1 ? __('ucModule.active') : __('ucModule.not active') }}
                                 </td>
                             @endif
 
@@ -123,16 +123,16 @@
 
                                     <x-modal width='lg' idName="Servicepreview{{ $service->id }}">
 
-                                        {{-- {{ __('PFBS.created_at') }} : {{ myDateStyle1($service->created_at) }}
+                                        {{-- {{ __('ucModule.created_at') }} : {{ myDateStyle1($service->created_at) }}
                                         </br>
                                         <x-actions edit wire:loading.attr='disabled'
                                         wire:click.prevent='edit({{ $service->id }})'></x-actions>
                                         </br>
-                                        {{ __('PFBS.note') }} : {{ $service->note }}</br>
+                                        {{ __('ucModule.note') }} : {{ $service->note }}</br>
                                         </br>
-                                        {{ __('PFBS.description') }} : {{ $service->description }}</br>
+                                        {{ __('ucModule.description') }} : {{ $service->description }}</br>
                                         </br>
-                                        {{ __('PFBS.services conditions') }} : {{ $service->conditions }}</br>
+                                        {{ __('ucModule.services conditions') }} : {{ $service->conditions }}</br>
                                         </br> --}}
 
                                         <livewire:CitzenServices.Details :id="$service->id">
@@ -145,7 +145,7 @@
                                         wire:click.prevent='edit({{ $service->id }})'></x-actions>
 
                                     <a wire:loading.attr='disabled' class="btn btn-lg text-danger "
-                                        wire:confirm.prompt="{{ __('PFBS.please insert num of services for del') }}\n|{{ $service->num }}"
+                                        wire:confirm.prompt="{{ __('ucModule.please insert num of services for del') }}\n|{{ $service->num }}"
                                         wire:click.prevent='destroy({{ $service->id }})'> <i
                                             class="ti-trash text-danger"></i>
                                     </a>
@@ -175,24 +175,24 @@
 
 
             <tr>
-                <th> {{ __('PFBS.service num') }} </th>
-                <th> {{ __('PFBS.service name') }} </th>
+                <th> {{ __('ucModule.service num') }} </th>
+                <th> {{ __('ucModule.service name') }} </th>
                 <th> الترتيب </th>
-                <th> {{ __('PFBS.activation') }} </th>
+                <th> {{ __('ucModule.activation') }} </th>
 
-                <th> {{ __('PFBS.active_from_date') }} </th>
-                <th> {{ __('PFBS.active_to_date') }} </th>
+                <th> {{ __('ucModule.active_from_date') }} </th>
+                <th> {{ __('ucModule.active_to_date') }} </th>
 
-                <th> {{ __('PFBS.url_active_from_date') }}</th>
-                <th>{{ __('PFBS.url_active_to_date') }} </th>
+                <th> {{ __('ucModule.url_active_from_date') }}</th>
+                <th>{{ __('ucModule.url_active_to_date') }} </th>
 
-                <th>{{ __('PFBS.services Responsible') }}</th>
-                <th>{{ __('PFBS.url service') }}</th>
-                <th>{{ __('PFBS.route_name') }}</th>
-                <th>{{ __('PFBS.description') }}</th>
-                <th>{{ __('PFBS.note') }}</th>
-                <th>{{ __('PFBS.services conditions') }}</th>
-                {{-- <th>{{ __('PFBS.actions') }}</th> --}}
+                <th>{{ __('ucModule.services Responsible') }}</th>
+                <th>{{ __('ucModule.url service') }}</th>
+                <th>{{ __('ucModule.route_name') }}</th>
+                <th>{{ __('ucModule.description') }}</th>
+                <th>{{ __('ucModule.note') }}</th>
+                <th>{{ __('ucModule.services conditions') }}</th>
+                {{-- <th>{{ __('ucModule.actions') }}</th> --}}
 
 
             </tr>
@@ -229,8 +229,8 @@
                         <td>
                             <select wire:model="active" class="form-control bg-white " style="width: 150px;">
 
-                                <option value="1">{{ __('PFBS.active') }}</option>
-                                <option value="0">{{ __('PFBS.not active') }}</option>
+                                <option value="1">{{ __('ucModule.active') }}</option>
+                                <option value="0">{{ __('ucModule.not active') }}</option>
                             </select>
                         </td>
                     @else
@@ -240,7 +240,7 @@
                             'text-success' => $service->active == 1,
                         ])>
 
-                            {{ $service->active == 1 ? __('PFBS.active') : __('PFBS.not active') }}
+                            {{ $service->active == 1 ? __('ucModule.active') : __('ucModule.not active') }}
 
 
 
@@ -321,7 +321,7 @@
                     @if ($editServicesId === $service->id)
                         <td>
 
-                            <x-textarea wire:model='note' name='note' :labelname="__('PFBS.note')" divWidth='6'
+                            <x-textarea wire:model='note' name='note' :labelname="__('ucModule.note')" divWidth='6'
                                 rows='4'></x-textarea>
                         </td>
                     @else
@@ -366,7 +366,7 @@
                                 wire:click.prevent='edit({{ $service->id }})'></x-actions>
 
                             <a wire:loading.attr='disabled' class="btn btn-lg text-danger "
-                                wire:confirm.prompt="{{ __('PFBS.please insert num of services for del') }}\n|{{ $service->num }}"
+                                wire:confirm.prompt="{{ __('ucModule.please insert num of services for del') }}\n|{{ $service->num }}"
                                 wire:click.prevent='destroy({{ $service->id }})'> <i
                                     class="ti-trash text-danger"></i>
                             </a>

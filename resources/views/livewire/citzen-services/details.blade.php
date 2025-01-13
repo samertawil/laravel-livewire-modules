@@ -11,18 +11,18 @@
     @if ($goEdit == 0)
         <div>
 
-            <span style="  font-weight: bold;">{{ __('PFBS.services Responsible') }}</span> : {{ $Responsible }} <br>
+            <span style="  font-weight: bold;">{{ __('ucModule.services Responsible') }}</span> : {{ $Responsible }} <br>
             <br>
-            <span style="  font-weight: bold;">{{ __('PFBS.url_active_from_date') }}</span> : {{ $url_active_from_date }}
+            <span style="  font-weight: bold;">{{ __('ucModule.url_active_from_date') }}</span> : {{ $url_active_from_date }}
             <br> <br>
-            <span style="  font-weight: bold;">{{ __('PFBS.url_active_to_date') }}</span> : {{ $url_active_to_date }}
+            <span style="  font-weight: bold;">{{ __('ucModule.url_active_to_date') }}</span> : {{ $url_active_to_date }}
             <br>
             <br>
-            <span style="  font-weight: bold;">{{ __('PFBS.url') }} </span>: {{ $url }} <br> <br>
-            <span style="  font-weight: bold;"> {{ __('PFBS.route_name') }}</span> : {{ $route_name }} <br> <br>
-            <span style="  font-weight: bold;">{{ __('PFBS.description') }}</span> : {{ $description }} <br> <br>
-            <span style="  font-weight: bold;">{{ __('PFBS.note') }}</span> : {{ $note }} <br> <br>
-            <span style="  font-weight: bold;">{{ __('PFBS.services conditions') }}</span> : {{ $conditions }} <br>
+            <span style="  font-weight: bold;">{{ __('ucModule.url') }} </span>: {{ $url }} <br> <br>
+            <span style="  font-weight: bold;"> {{ __('ucModule.route_name') }}</span> : {{ $route_name }} <br> <br>
+            <span style="  font-weight: bold;">{{ __('ucModule.description') }}</span> : {{ $description }} <br> <br>
+            <span style="  font-weight: bold;">{{ __('ucModule.note') }}</span> : {{ $note }} <br> <br>
+            <span style="  font-weight: bold;">{{ __('ucModule.services conditions') }}</span> : {{ $conditions }} <br>
             <br>
 
         </div>
@@ -33,7 +33,7 @@
 
             <div class="row">
 
-                <x-input wire:model='Responsible' name='Responsible' :labelname="__('PFBS.services Responsible')" label divWidth='6'></x-input>
+                <x-input wire:model='Responsible' name='Responsible' :labelname="__('ucModule.services Responsible')" label divWidth='6'></x-input>
 
             </div>
 
@@ -50,7 +50,7 @@
 
             <div class="row">
 
-                <x-input wire:model='url' name='url' label :labelname="__('PFBS.url service')" divWidth='6'></x-input>
+                <x-input wire:model='url' name='url' label :labelname="__('ucModule.url service')" divWidth='6'></x-input>
 
                 <x-input wire:model='route_name' name='route_name' label divWidth='6'></x-input>
 
@@ -63,7 +63,7 @@
                 <x-textarea wire:model='description' name='description' label divWidth='6'
                     rows='4'></x-textarea>
 
-                <x-textarea wire:model='note' name='note' label :labelname="__('PFBS.note')" divWidth='6'
+                <x-textarea wire:model='note' name='note' label :labelname="__('ucModule.note')" divWidth='6'
                     rows='4'></x-textarea>
 
             </div>
@@ -72,7 +72,7 @@
                 <div class="card-header">
                     <div class="card-title">
                         <h3 class="card-title">
-                            {{ __('PFBS.services conditions') }}
+                            {{ __('ucModule.services conditions') }}
                         </h3>
                     </div>
                 </div>

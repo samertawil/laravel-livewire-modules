@@ -122,7 +122,7 @@ class UserIndex extends Component
     {
 		
 	        // if(Gate::denies('user.resource')) {
-        //     abort(403,__('PFBS.you have no access'));
+        //     abort(403,__('ucModule.you have no access'));
         //  }
 
 
