@@ -22,11 +22,13 @@ Route::group( [ 'prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 
     
     // Route::get('test',Test::class);
     
-    include __DIR__.'/user.php';
+      include __DIR__.'/user.php';
 
-     include __DIR__.'/setting.php';
+      include __DIR__.'/setting.php';
 	 
-	   include __DIR__.'/status.php';
+	  include __DIR__.'/status.php';
+	   
+	  include __DIR__ . '/citzenServices.php';
 
     });
 

@@ -45,6 +45,8 @@ publish :
 	 include __DIR__.'/status.php';
        
 	 include __DIR__.'/permission.php';
+	 
+	 include __DIR__ . '/citzenServices.php';
 
     });</span></pre>
     
