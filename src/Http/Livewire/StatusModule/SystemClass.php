@@ -6,8 +6,8 @@ namespace App\Livewire\StatusModule;
 use Livewire\Component;
 use App\Models\SettingSystem;
 use App\Traits\FlashMsgTraits;
+use Livewire\Attributes\Computed;
 use Livewire\Attributes\Validate;
-use App\Http\Requests\SystemNamesRequest;
 
 
 class SystemClass extends Component
@@ -34,11 +34,15 @@ class SystemClass extends Component
         $this->reset();
     }
 
+    #[Computed()]
+    public static function systems_data() {
+        return SettingSystem::orderBy('created_at','desc')->get();
+    }
+
     public function render()
     {
-       $systems_data = SettingSystem::orderBy('created_at','desc')->get();
-        
-        return view('livewire.status.system',compact('systems_data'));
+     
+        return view('livewire.status.system');
     }
 
 

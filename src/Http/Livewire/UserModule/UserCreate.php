@@ -25,6 +25,9 @@ class UserCreate extends Component
     #[Layout('components.layouts.metronic7-simple-app')]
     public function render()
     {
+        // if(Gate::denies('user.resource')) {
+        //     abort(403,__('PFBS.you have no access'));
+        //  }
 
        $pageTitle=__('ucModule.users');
         

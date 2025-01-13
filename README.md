@@ -7,7 +7,7 @@ development by "samer tawil"  eng.samertawil@gmail.com
 
 ## Installation
 You can install the package via composer:
-<pre><span>composer require aravel-livewire/uc-modules</span></pre>
+<pre><span>composer require laravel-livewire/uc-modules</span></pre>
 
  
 Register package by add provider services in bootstrap folder 
@@ -56,4 +56,4 @@ Helper function publish : edit composer.json autoload section and add
             "app/helper/generalfunctions.php"
         ]</span></pre>
 		
-<pre><span> composer dump-autload;</span></pre>
+<pre><span> composer dump-autoload;</span></pre>

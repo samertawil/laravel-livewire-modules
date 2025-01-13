@@ -5,19 +5,9 @@
         <x-breadcrumb CurrentPageTitle={{ $pageTitle }}></x-breadcrumb>
 
     </x-slot:crumb>
-{{-- 
-    @push('css')
-        <style>
-            td,
-            th {
-                text-align: right !important;
-            }
-        </style>
-      
-    @endpush --}}
 
-   {{-- <link rel="stylesheet" href="{{ asset('assets/my-css/select2.min.css') }}"> --}}
 
+ 
     <div class="row  m-auto">
         <div class="col-lg-12">
             <div class="card custom-card">
@@ -34,7 +24,7 @@
 
  
                               <livewire:StatusModule.SystemClass></livewire:StatusModule.SystemClass>
-
+ 
  
                         <form wire:submit="store">
 
@@ -62,9 +52,9 @@
 
 
                                     <x-select name="p_id_sub"  label="yes"    wire:model='p_id_sub'
-                                        :options="$parents->pluck('status_name', 'id')"   class="js-select2" jsSelect2 wireIgone></x-select>
+                                        :options="$statuses->whereNotnull('p_id')->whereNull('p_id_sub')->pluck('status_name', 'id')"   class="js-select2" jsSelect2 wireIgone></x-select>
                                         
-                                         
+                        
 
                                     <x-select name="used_in_system_id" wire:model="used_in_system_id" label="yes"
                                          :options="$systems_data->pluck('system_name', 'id')"></x-select>
@@ -96,9 +86,9 @@
                 </section>
 
                 <x-search-index-section>
-
+              
                     <div class="col-sm-12 col-md-3"  >
-                        <x-select id="id1" :options="$parents->pluck('status_name', 'id')" 
+                        <x-select id="id1" :options="$statuses->whereNotnull('p_id')->whereNull('p_id_sub')->pluck('status_name', 'id')" 
                             :ChoseTitle="__('ucModule.p_id_sub')"
                              divWidth="12"
                              class="js-select2" jsSelect2 wireIgone
@@ -159,7 +149,8 @@
 
                                         @if ($editStatusId === $data->id)
                                             <td>
-                                                <x-select wire:model='statusPid' :options="$parents->pluck('status_name', 'id')"
+                                                <x-select wire:model='statusPid' :options="$statuses->whereNull('p_id_sub')
+                                                ->whereNotNull('p_id')->pluck('status_name', 'id')"
                                                     divWidth="10"></x-select>
 
                                             </td>

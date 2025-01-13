@@ -28,7 +28,11 @@
         </div>
 
 
-        <x-button></x-button>
+    
+        <x-slot:ModalButton>
+            <x-button></x-button>
+        </x-slot:ModalButton>
+
 
     </form>
     <div class="text-center">

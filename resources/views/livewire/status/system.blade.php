@@ -38,7 +38,7 @@
                 </thead>
                 <tbody>
 
-                    @foreach ($systems_data as $system_data)
+                    @foreach ($this->systems_data as $system_data)
                         <tr>
                             <td>{{ $system_data->id }}</td>
                             <td>{{ $system_data->system_name }}</td>

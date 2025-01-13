@@ -30,7 +30,7 @@ class UserIndex extends Component
     protected $paginationTheme = 'bootstrap';
 
     #[Url()]
-    public $perPage = 10;
+    public $perPage = 5;
 
     #[Url()]
     public $searchUsertype = '';
@@ -120,6 +120,13 @@ class UserIndex extends Component
     #[Layout('components.layouts.metronic7-simple-app')]
     public function render()
     {
+		
+	        // if(Gate::denies('user.resource')) {
+        //     abort(403,__('PFBS.you have no access'));
+        //  }
+
+
+		 
         $title = __('ucModule.users') ;
         $pageTitle =  __('ucModule.users') ;
 

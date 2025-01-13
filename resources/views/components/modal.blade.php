@@ -24,6 +24,7 @@
                 <div class="modal-footer">
                     <button class="btn ripple btn-secondary" data-dismiss="modal"
                         type="button">{{ __('ucModule.close') }}</button>
+						       {{$ModalButton ?? ''}}
                 </div>
             </div>
         </div>

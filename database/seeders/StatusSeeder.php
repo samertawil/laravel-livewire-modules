@@ -16,7 +16,7 @@ class StatusSeeder extends Seeder
     {
         $StatusData = [
             ['p_id' => null,'p_id_sub'=>null,'status_name'=>'ثوابت البرنامج'],
-            ['p_id' => 1,'p_id_sub'=>1,'status_name'=>'ثوابت عامة'],
+            ['p_id' => 1,'p_id_sub'=>null,'status_name'=>'ثوابت عامة'],
         ];
         Status::insert($StatusData);
     }

@@ -9,12 +9,8 @@ use Livewire\Component;
 use App\Traits\SortTrait;
 use Livewire\Attributes\Url;
 use Livewire\WithPagination;
-use App\Models\SettingSystem;
 use App\Traits\FlashMsgTraits;
 use Illuminate\Validation\Rule;
-use Livewire\Attributes\Layout;
-use App\Http\Requests\StatusRequest;
-use App\Services\CacheStatusModelServices;
 
 
 
@@ -76,10 +72,9 @@ class  StatusClass extends Component
 
         status::create($this->all());
 
-        FlashMsgTraits::created(); 
-        
-        $this->reset();
+        FlashMsgTraits::created();
 
+        $this->reset();
     }
 
 
@@ -119,7 +114,8 @@ class  StatusClass extends Component
     }
 
 
- 
+
+
     public function render()
     {
         // if(Gate::denies('status.index')) {
@@ -136,15 +132,10 @@ class  StatusClass extends Component
             ->orderBy($this->sortBy, $this->sortdir)
             ->paginate($this->perPage);
 
+        $systems_data = SystemClass::systems_data();
 
 
-        $systems_data = SettingSystem::orderBy('created_at', 'desc')->get();
-
-        $parents = CacheStatusModelServices::getData()->whereNull('p_id_sub');
-
-
-
-        return view('livewire.status.status', compact('systems_data', 'pageTitle', 'statuses', 'parents'))
+        return view('livewire.status.status', compact('systems_data', 'pageTitle', 'statuses',))
             ->layoutData(['title' => $pageTitle, 'pageTitle' => $pageTitle]);
     }
 }
