@@ -5,22 +5,17 @@
         'label' => '',
         'divlclass'=>'',
         'name'=>'',
-        'iclass'=>''
+        'iclass'=>'',
+         'text_dir'=>'text-right',
+        'default_class'=>'btn btn-sm btn-info'
     ])
 
-    
-        {{-- <div class="btn-group">
-            <a href="{{ $route }}" 
-            {{ $attributes->class(['btn btn-md bg-info text-white']) }}>
-                {{ $label }}</a>
-        </div> --}}
-
-
          
-<div @class(['text-left   ', $divlclass])> 
+
+<div @class([' my-4 ', $divlclass,$text_dir])>
 
     <a  href={{$route}}
-        {{$attributes->class(['btn btn-sm btn-info',
+        {{$attributes->class([$default_class,
              ]) }}  >{{$name}}
              @if($iclass)
               <i class="las la-trash"></i>
@@ -32,5 +27,6 @@
 </div>
 
 
-
- 
+{{-- 
+<x-tag-a :route="route($service->route_name)" :name="__('ucModule.sign in')" default_class="btn btn-outline-secondary  btn-light-primary"
+    style="width: 100px; height: 38px; font-size:13px;"></x-tag-a> --}}

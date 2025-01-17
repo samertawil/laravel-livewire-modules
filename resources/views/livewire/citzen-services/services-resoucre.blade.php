@@ -1,16 +1,18 @@
 <div>
 
     <x-slot:crumb>
-        <x-breadcrumb  >
-          
-            <li class="breadcrumb-item"><a href="{{route('citzen.services.index')}}" class="text-muted">{{__('ucModule.services index')}} </a></li>
-            <li class="breadcrumb-item"><a href="{{route('citzen.services.resouces')}}" class="text-muted">{{__('ucModule.services resource')}} </a></li>
-           
+        <x-breadcrumb>
+
+            <li class="breadcrumb-item"><a href="{{ route('citzen.services.index') }}"
+                    class="text-muted">{{ __('ucModule.services index') }} </a></li>
+            <li class="breadcrumb-item"><a href="{{ route('citzen.services.resouces') }}"
+                    class="text-muted">{{ __('ucModule.services resource') }} </a></li>
+
         </x-breadcrumb>
 
     </x-slot:crumb>
 
-    
+
     <div class="row">
 
         <div class="col-6">
@@ -41,11 +43,11 @@
 
             <div class="d-md-flex">
 
-                <x-radio wire:model='active' name='active' :value1='1' :value2='0'   label
-                    :labelname="__('ucModule.activation')" :value_title1="__('ucModule.active')" :value_title2="__('ucModule.not active')" divclass="mt-5"></x-radio>
+                <x-radio wire:model='active' name='active' :value1='1' :value2='0' label :labelname="__('ucModule.activation')"
+                    :value_title1="__('ucModule.active')" :value_title2="__('ucModule.not active')" divclass="mt-5"></x-radio>
 
 
-                <x-input wire:model='route_name' name='route_name' divlclass="mt-4"  label divWidth='5'></x-input>
+                <x-input wire:model='route_name' name='route_name' divlclass="mt-4" label divWidth='5'></x-input>
 
             </div>
 
@@ -58,48 +60,90 @@
         <x-textarea wire:model='note' name='note' label :labelname="__('ucModule.note')" divWidth='6' rows='4'></x-textarea>
     </div>
 
+    <div class="row align-items-center">
 
-    <div class="card card-custom">
-        <div class="card-header">
-            <div class="card-title">
-                <h3 class="card-title">
-                    {{ __('ucModule.services conditions') }}
-                </h3>
-            </div>
-        </div>
+        <x-textarea wire:model='conditions' name='conditions' data-provide="markdown" label :labelname="__('ucModule.conditions')"
+            divWidth='6' rows='10'></x-textarea>
 
 
-        <div class="card-body">
-            <div class="form-group row">
-                 
-                <div class="col-lg-6 col-md-9 col-sm-12">
-                    <textarea wire:model='conditions' name="conditions" class="form-control" data-provide="markdown" rows="10"></textarea>
-                </div>
-            </div>
+        <div class="col-5">
+            <x-textarea wire:model='deactive_note' name='deactive_note' label :labelname="__('ucModule.deactive_note')" divWidth='12'
+                rows='4' span description_field1=" بحال ايقاف الخدمة"></x-textarea>
+
+            <x-input type="number" min="0" wire:model='home_page_order' name='home_page_order' label
+                divWidth='12'></x-input>
+
+            <x-input wire:model='teal' name='teal' label divWidth='12'></x-input>
 
         </div>
+
 
 
     </div>
+    @if ($logo1)
+        {{ __('ucModule.preview') }}
+        @foreach ($logo1 as $image)
+            <img src="{{ $image->temporaryUrl() }}" class="w-50 w-lg-25 h-50 h-lg-25 p-4">
+        @endforeach
 
+    @endif
     <div class="form-group">
-        <label for="card_img">اضافة مرفقات</label>
-        <input type="file" name="card_img[]" @class ([
+        <label for="card_img">اضافة صورة 1</label>
+        <input type="file" wire:model='logo1' name="logo1[]" @class ([
             ' custom-file',
             'form-control',
-            'is-invalid' => $errors->has('card_img'),
+            'is-invalid' => $errors->has('logo1.*'),
         ]) accept="image/*" multiple>
-        @error('card_img')
-            @foreach ($errors->get('card_img') as $error)
-                <li class="invalid-feedback">{{ $error }}</li>
-            @endforeach
+
+        @error('logo1.*')
+            <li class="invalid-feedback"> {{ $message }} </li>
+        @enderror
+    </div>
+    @if ($logo2)
+        {{ __('ucModule.preview') }}
+        @foreach ($logo2 as $image)
+            <img src="{{ $image->temporaryUrl() }}" class="w-50 w-lg-25 h-50 h-lg-25 p-4">
+        @endforeach
+
+    @endif
+    <div class="form-group">
+        <label for="card_img">اضافة صورة 2</label>
+        <input type="file" wire:model='logo2' name="logo2[]" @class ([
+            ' custom-file',
+            'form-control',
+            'is-invalid' => $errors->has('logo2.*'),
+        ]) accept="image/*" multiple>
+        @error('logo2.*')
+            <li class="invalid-feedback"> {{ $message }} </li>
         @enderror
     </div>
 
+    <div class="row">
 
-    <x-input wire:model='home_page_order' name='home_page_order' label></x-input>
+    </div>
 
-    <div class="text-right ">
+
+   
+
+
+
+
+    <x-modal idName="PropartiesModal" :title="__('ucModule.add more proparty')">
+
+
+        <livewire:AttributesList></livewire:AttributesList>
+
+
+
+
+    </x-modal>
+
+
+    <div class="d-flex justify-content-end">
+
+        <x-button class="mx-2" data-target="#PropartiesModal" data-toggle="modal" label="add more proparty">
+        </x-button>
+
 
         <x-button wire:click.prevent='store'></x-button>
     </div>

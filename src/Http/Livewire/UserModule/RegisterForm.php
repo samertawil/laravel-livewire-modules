@@ -22,7 +22,7 @@ class RegisterForm extends Component
 
      #[Validate(['required', 'numeric', 'min_digits:10', 'max_digits:15', 'unique:users,mobile'])]
     public $mobile = '';
-
+	#[Validate(['nullable', 'email'])]
     public $email = '';
 
     #[Validate(['required', 'min:4', 'same:passwordConfirmation'])]
@@ -43,6 +43,7 @@ class RegisterForm extends Component
            $user = User::create([
             'user_name' => $this->user_name,
             'name' => $this->name,
+			'email'=>$this->email,
             'mobile' => $this->mobile,
             'created_by'=>Auth::user()->id,
             'password' => Hash::make($this->password),
@@ -54,7 +55,7 @@ class RegisterForm extends Component
      
         $this->dispatch('closeModel');
       
-        $this->reset(['user_name','name','mobile','password' ,'passwordConfirmation']);
+        $this->reset(['user_name','name','mobile','password' ,'passwordConfirmation','email']);
     }
 
 

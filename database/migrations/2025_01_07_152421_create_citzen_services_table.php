@@ -17,12 +17,14 @@ return new class extends Migration
             $table->text('note')->nullable();
             $table->text('conditions')->nullable();
             $table->boolean('active')->default(true);
+			 $table->string('deactive_note')->nullable();
             $table->date('url_active_from_date')->nullable();
             $table->date('url_active_to_date')->nullable();
             $table->date('active_from_date')->nullable();
             $table->date('active_to_date')->nullable();
             $table->string('url')->nullable();
             $table->foreignId('status_id')->nullable()->constrained('statuses');
+			   $table->string('teal')->nullable();
             $table->string('Responsible')->nullable();
             $table->json('logo1')->nullable();
             $table->json('logo2')->nullable();

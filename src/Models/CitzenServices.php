@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class CitzenServices extends Model
 {
+   protected $casts=[
+      'logo1'=>'json',
+      'logo2'=>'json',
+      'properties'=>'json',
+   ];
    protected $fillable=[
     'num',
     'name',
@@ -24,5 +29,8 @@ class CitzenServices extends Model
      'logo1',
      'logo2',
      'home_page_order',
+     'teal',
+     'deactive_note',
+     'properties',
    ];
 }

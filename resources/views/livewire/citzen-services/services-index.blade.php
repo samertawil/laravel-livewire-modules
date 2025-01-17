@@ -6,7 +6,7 @@
     @endpush
 
     <x-slot:crumb>
-        <x-breadcrumb >
+        <x-breadcrumb>
 
             <li class="breadcrumb-item"><a href="{{ route('citzen.services.index') }}"
                     class="text-muted">{{ __('ucModule.services index') }} </a></li>
@@ -20,7 +20,7 @@
 
 
 
-
+  {{-- LG large view --}}
     <div class="table-responsive  d-none d-sm-block">
         <div id="example2_wrapper " class="dataTables_wrapper dt-bootstrap4 no-footer">
             <table class="table text-md-nowrap dataTable no-footer dtr-inline collapsed sortable" id="example2"
@@ -125,18 +125,7 @@
 
                                     <x-modal width='lg' idName="Servicepreview{{ $service->id }}">
 
-                                        {{-- {{ __('ucModule.created_at') }} : {{ myDateStyle1($service->created_at) }}
-                                        </br>
-                                        <x-actions edit wire:loading.attr='disabled'
-                                        wire:click.prevent='edit({{ $service->id }})'></x-actions>
-                                        </br>
-                                        {{ __('ucModule.note') }} : {{ $service->note }}</br>
-                                        </br>
-                                        {{ __('ucModule.description') }} : {{ $service->description }}</br>
-                                        </br>
-                                        {{ __('ucModule.services conditions') }} : {{ $service->conditions }}</br>
-                                        </br> --}}
-
+                                     
                                         <livewire:CitzenServices.Details :id="$service->id">
                                         </livewire:CitzenServices.Details>
 
@@ -171,7 +160,7 @@
         </div>
     </div>
 
-
+  {{-- SM mobile view --}}
     <div class="bg-light  d-block d-sm-none " role="region" aria-labelledby="Cap1" tabindex="0">
         <table class=" table hover" id="mytable2">
 
@@ -193,24 +182,30 @@
                 <th>{{ __('ucModule.route_name') }}</th>
                 <th>{{ __('ucModule.description') }}</th>
                 <th>{{ __('ucModule.note') }}</th>
+                <th>{{ __('ucModule.home_page_order') }}</th>
+                <th>{{ __('ucModule.teal') }}</th>
+                <th>{{ __('ucModule.deactive_note') }}</th>
+
                 <th>{{ __('ucModule.services conditions') }}</th>
-                {{-- <th>{{ __('ucModule.actions') }}</th> --}}
+                <th>{{ __('ucModule.actions') }}</th>
 
 
             </tr>
 
 
-
+            <tr>
             @foreach ($this->services as $key => $service)
-                <tr>
+              
 
                     <td> {{ $service->num }} </td>
 
+                   
 
                     @if ($editServicesId === $service->id)
-                        <td>
-                            <input wire:model='name' name='name' placeholder="..." class="form-control bg-white">
-                        </td>
+                
+                    {{ $service->name }}
+                        
+                      
                     @else
                         <td>{{ $service->name }}</td>
                     @endif
@@ -330,29 +325,43 @@
                         <td>{{ $service->note }}</td>
                     @endif
 
+                    @if ($editServicesId === $service->id)
+                        <td>
+
+                            <x-input type="number" min="0" wire:model='home_page_order'
+                                name='home_page_order' :labelname="__('ucModule.home_page_order')" divWidth='6'></x-input>
+                        </td>
+                    @else
+                        <td>{{ $service->home_page_order }}</td>
+                    @endif
 
                     @if ($editServicesId === $service->id)
                         <td>
-                            <div class="card card-custom">
-                                <div class="card-header">
-                                    <div class="card-title">
 
-                                    </div>
-                                </div>
+                            <x-input wire:model='teal' name='teal' :labelname="__('ucModule.teal')" divWidth='6'></x-input>
+                        </td>
+                    @else
+                        <td>{{ $service->teal }}</td>
+                    @endif
+
+                    @if ($editServicesId === $service->id)
+                        <td>
+
+                            <x-textarea wire:model='deactive_note' name='deactive_note' :labelname="__('ucModule.deactive_note')"
+                                divWidth='6' rows='4'></x-textarea>
+                        </td>
+                    @else
+                        <td>{{ $service->deactive_note }}</td>
+                    @endif
+
+                    @if ($editServicesId === $service->id)
+                        <td>
 
 
-                                <div class="card-body">
-                                    <div class="form-group row">
-
-                                        <div class="col-lg-6 col-md-9 col-sm-12">
-                                            <textarea wire:model='conditions' name="conditions" class="form-control" data-provide="markdown" rows="10"></textarea>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
+                            <div class="col-lg-6 col-md-9 col-sm-12">
+                                <textarea wire:model='conditions' name="conditions" class="form-control" data-provide="markdown" rows="10"></textarea>
                             </div>
+
 
                         </td>
                     @else
@@ -362,6 +371,7 @@
 
 
                     <td class=" d-flex  justify-content-center">
+                      
 
                         @if (!($editServicesId === $service->id))
                             <x-actions edit wire:loading.attr='disabled'
@@ -389,9 +399,9 @@
 
 
 
-                </tr>
+               
             @endforeach
-
+        </tr>
 
         </table>
 

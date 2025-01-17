@@ -45,15 +45,19 @@ class ServicesIndex extends Component
     public $active_from_date;
 
     public $active_to_date;
+ 
+
 
     public function edit($id)
     {
 
+      
         $this->editServicesId = $id;
-
+      
         $data =  $this->services($id);
-
+      
         $this->name = $data->name;
+ 
         $this->home_page_order = $data->home_page_order;
         $this->active = $data->active;
         $this->active_from_date = $data->active_from_date;
@@ -91,7 +95,7 @@ class ServicesIndex extends Component
 
     public function destroy($id)
     {
-        dd($id);
+         
         CitzenServices::destroy($id);
     }
 

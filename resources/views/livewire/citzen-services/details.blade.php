@@ -11,9 +11,11 @@
     @if ($goEdit == 0)
         <div>
 
-            <span style="  font-weight: bold;">{{ __('ucModule.services Responsible') }}</span> : {{ $Responsible }} <br>
+            <span style="  font-weight: bold;">{{ __('ucModule.services Responsible') }}</span> : {{ $Responsible }}
             <br>
-            <span style="  font-weight: bold;">{{ __('ucModule.url_active_from_date') }}</span> : {{ $url_active_from_date }}
+            <br>
+            <span style="  font-weight: bold;">{{ __('ucModule.url_active_from_date') }}</span> :
+            {{ $url_active_from_date }}
             <br> <br>
             <span style="  font-weight: bold;">{{ __('ucModule.url_active_to_date') }}</span> : {{ $url_active_to_date }}
             <br>
@@ -22,9 +24,19 @@
             <span style="  font-weight: bold;"> {{ __('ucModule.route_name') }}</span> : {{ $route_name }} <br> <br>
             <span style="  font-weight: bold;">{{ __('ucModule.description') }}</span> : {{ $description }} <br> <br>
             <span style="  font-weight: bold;">{{ __('ucModule.note') }}</span> : {{ $note }} <br> <br>
-            <span style="  font-weight: bold;">{{ __('ucModule.services conditions') }}</span> : {{ $conditions }} <br>
+            <span style="  font-weight: bold;">{{ __('ucModule.home_page_order') }}</span> : {{ $home_page_order }}
+            <br> <br>
+            <span style="  font-weight: bold;">{{ __('ucModule.teal') }}</span> : {{ $teal }} <br> <br>
+            <span style="  font-weight: bold;">{{ __('ucModule.deactive_note') }}</span><span class="text-muted">
+                deactive_note </span> : {{ $deactive_note }} <br> <br>
+            <span style="  font-weight: bold;">{{ __('ucModule.services conditions') }}</span> : {{ $conditions }}
             <br>
-
+            <br>
+            <span style="  font-weight: bold;">{{ __('ucModule.properties') }}</span>
+            @foreach ($properties??[] as $key=>$value )
+          <li>  {{  $key }} : {{ $value }}</li>
+            @endforeach
+          
         </div>
     @endif
 
@@ -68,29 +80,30 @@
 
             </div>
 
-            <div class="card card-custom">
-                <div class="card-header">
-                    <div class="card-title">
-                        <h3 class="card-title">
-                            {{ __('ucModule.services conditions') }}
-                        </h3>
-                    </div>
-                </div>
+
+            <div class="row align-items-center">
+
+                <x-textarea wire:model='conditions' name='conditions' data-provide="markdown" label :labelname="__('ucModule.conditions')"
+                    divWidth='6' rows='13'></x-textarea>
 
 
-                <div class="card-body">
-                    <div class="form-group row">
-                        <label class="col-form-label text-right col-lg-3 col-sm-12">Default Demo</label>
-                        <div class="col-lg-6 col-md-9 col-sm-12">
-                            <textarea wire:model='conditions' name="conditions" class="form-control" data-provide="markdown" rows="10"></textarea>
-                        </div>
-                    </div>
+                <div class="col-5">
+                    <x-textarea wire:model='deactive_note' name='deactive_note' label :labelname="__('ucModule.deactive_note')" divWidth='12'
+                        rows='4' span description_field1=" بحال ايقاف الخدمة"></x-textarea>
+
+                    <x-input type="number" min="0" wire:model='home_page_order' name='home_page_order' label
+                        divWidth='12'></x-input>
+
+                    <x-input wire:model='teal' name='teal' label divWidth='12'></x-input>
 
                 </div>
 
-
+                @foreach ($properties??[] as $key=>$value )
+                <li> <x-input value=" {{$key}}" name='properties' label divWidth='12'></x-input></li>
+                 
+               
+                @endforeach
             </div>
-
 
         </div>
     @endif

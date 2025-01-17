@@ -35,10 +35,10 @@
                                      autocomplete="new-password" divlclass='col-lg-12'></x-input>
 
                                 
-                                    <x-slot:ModalButton>
+                                   
                                         <x-button label="register_new_account" class="bg-primary text-white mx-3"
                                         divlclass="d-grid gap-2" wire:click='register'></x-button>
-                                      </x-slot:ModalButton>  
+                                     
 
                                  @if (!Auth::check())
                                  {{-- :route="route('login')" --}}

@@ -3,9 +3,6 @@
 namespace App\Livewire\CitzenServices;
 
 use Livewire\Component;
-use App\Models\CitzenServices;
-
-
 
 class Details extends Component
 {
@@ -37,6 +34,11 @@ class Details extends Component
 
     public $dataToEdit;
 
+    public $teal;
+
+    public $home_page_order;
+    public $deactive_note;
+    public $properties=[];
 
     public function mount($id)
     {
@@ -58,6 +60,11 @@ class Details extends Component
         $this->Responsible = $data->Responsible;
         $this->logo1 = $data->logo1;
         $this->logo2 = $data->logo2;
+        $this->logo2 = $data->logo2;
+        $this->teal = $data->teal;
+        $this->home_page_order = $data->home_page_order;
+        $this->deactive_note = $data->deactive_note;
+        $this->properties = $data->properties;
     }
 
 
@@ -77,6 +84,10 @@ class Details extends Component
         $this->Responsible = $this->dataToEdit->Responsible;
         $this->logo1 = $this->dataToEdit->logo1;
         $this->logo2 = $this->dataToEdit->logo2;
+        $this->home_page_order = $this->dataToEdit->home_page_order;
+        $this->teal = $this->dataToEdit->teal;
+        $this->deactive_note = $this->dataToEdit->deactive_note;
+        $this->properties = $this->dataToEdit->properties;
     }
 
 
@@ -92,6 +103,9 @@ class Details extends Component
             'url' => $this->url,
             'route_name' => $this->route_name,
             'Responsible' => $this->Responsible,
+            'home_page_order' => $this->home_page_order,
+            'teal' => $this->teal,
+            'deactive_note' => $this->deactive_note,
         ]);
 
         $this->cancelEdit();

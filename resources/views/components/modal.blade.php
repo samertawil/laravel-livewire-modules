@@ -13,8 +13,7 @@
             <div class="modal-content modal-content-demo  ">
                 <div class="modal-header">
                     <h6 class="modal-title text-dark">{{ $title }}</h6>
-                    <button aria-label="Close" class="close"
-                        data-dismiss="modal" type="button">x</button>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">x</button>
                 </div>
 
                 <div class="modal-body">
@@ -24,7 +23,8 @@
                 <div class="modal-footer">
                     <button class="btn ripple btn-secondary" data-dismiss="modal"
                         type="button">{{ __('ucModule.close') }}</button>
-						       {{$ModalButton ?? ''}}
+                    {{ $ModalButton ?? '' }}
+                      
                 </div>
             </div>
         </div>
@@ -42,3 +42,22 @@
     @endpush
 
 </div>
+
+
+
+{{-- example
+
+    <x-button class="mx-2"   data-target="#PropartiesModal" data-toggle="modal" label="add more proparty">
+    </x-button>
+
+<x-modal idName="PropartiesModal" :title="__('ucModule.add more proparty')">
+    <livewire:AttributesList></livewire:AttributesList>
+<x-slot:ModalButton>
+
+<div class="d-flex justify-content-center">
+ <x-tag-a :route="route('att')" :name="__('ucModule.sign in')"     default_class="btn btn-light-primary"
+        style="width: 100px; height: 38px; font-size:13px;"></x-tag-a>
+</div>
+</x-slot:ModalButton>
+
+ --}}
