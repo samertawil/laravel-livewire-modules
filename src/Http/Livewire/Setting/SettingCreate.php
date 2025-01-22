@@ -43,7 +43,7 @@ class SettingCreate extends Component
     #[Layout('components.layouts.metronic7-simple-app')]
     public function render()
     {
-        $pageTitle= __('ucModule.setting')  ; 
+        $pageTitle= __('customTrans.setting')  ; 
 
         $settings=Setting::get();
 

@@ -10,7 +10,6 @@ use App\Models\CitzenServices;
 use App\Traits\FlashMsgTraits;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Validate;
-use Illuminate\Support\Facades\Storage;
 
 class ServicesIndex extends Component
 {
@@ -43,24 +42,22 @@ class ServicesIndex extends Component
     #[Validate('required|in:0,1')]
     public $active = '';
 
-    #[Validate(['date_format:Y-m-d'])]
     public $active_from_date;
 
-    #[Validate(['after_or_equal:now','date_format:Y-m-d'])]
     public $active_to_date;
-
-
  
+
+
     public function edit($id)
     {
 
-
+      
         $this->editServicesId = $id;
-
+      
         $data =  $this->services($id);
-
+      
         $this->name = $data->name;
-
+ 
         $this->home_page_order = $data->home_page_order;
         $this->active = $data->active;
         $this->active_from_date = $data->active_from_date;
@@ -96,7 +93,12 @@ class ServicesIndex extends Component
     }
 
 
-   
+    public function destroy($id)
+    {
+         
+        CitzenServices::destroy($id);
+    }
+
 
 
     #[Computed()]
@@ -111,25 +113,9 @@ class ServicesIndex extends Component
     }
 
 
-    public function destroy($id)
-    {
-         
-        $data = $this->services($id);
-        if ($data->logo1) {
-            foreach ($data->logo1 as $file) {
-                Storage::disk('public')->delete($file);
-            }
-        }
-         
-          $data->delete();  
-    }
 
-
-    
     public function render()
     {
-        
-        $title = __('PFBS.services managment');
-        return view('livewire.citzen-services.services-index')->layoutData(['title' => $title, 'pageTitle' => $title]);
+        return view('livewire.citzen-services.services-index');
     }
 }

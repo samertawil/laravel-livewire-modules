@@ -71,7 +71,7 @@ class RoleEdit extends Component
     public function render()
     {
 
-        $pageTitle = __('ucModule.edit role');
+        $pageTitle = __('customTrans.edit role');
         $abilities_module = Ability::select('module_id')->groupby('module_id')->get();
 
         $abilities = Ability::select('id', 'module_id', 'ability_description', 'ability_name', 'activation')->with('modulename')->withoutGlobalScope('not-active')->get();

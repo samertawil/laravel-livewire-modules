@@ -9,9 +9,9 @@
         <x-breadcrumb>
 
             <li class="breadcrumb-item"><a href="{{ route('citzen.services.index') }}"
-                    class="text-muted">{{ __('PFBS.services index') }} </a></li>
+                    class="text-muted">{{ __('customTrans.services index') }} </a></li>
             <li class="breadcrumb-item"><a href="{{ route('citzen.services.resouces') }}"
-                    class="text-muted">{{ __('PFBS.services resource') }} </a></li>
+                    class="text-muted">{{ __('customTrans.services resource') }} </a></li>
 
         </x-breadcrumb>
 
@@ -20,7 +20,7 @@
 
 
 
-    {{-- LG large view --}}
+  {{-- LG large view --}}
     <div class="table-responsive  d-none d-sm-block">
         <div id="example2_wrapper " class="dataTables_wrapper dt-bootstrap4 no-footer">
             <table class="table text-md-nowrap dataTable no-footer dtr-inline collapsed sortable" id="example2"
@@ -29,13 +29,13 @@
                     <tr>
 
                         <x-table-th wire:click="setSortBy('num')" name="num" sortBy={{ $sortBy }}
-                            sortdir={{ $sortdir }} :labelname="__('PFBS.service num')"></x-table-th>
+                            sortdir={{ $sortdir }} :labelname="__('customTrans.service num')"></x-table-th>
 
                         <x-table-th wire:click="setSortBy('name')" name="name" sortBy={{ $sortBy }}
-                            sortdir={{ $sortdir }} :labelname="__('PFBS.service name')"></x-table-th>
+                            sortdir={{ $sortdir }} :labelname="__('customTrans.service name')"></x-table-th>
 
                         <x-table-th wire:click="setSortBy('home_page_order')" name="home_page_order"
-                            sortBy={{ $sortBy }} sortdir={{ $sortdir }} :labelname="__('PFBS.order')"></x-table-th>
+                            sortBy={{ $sortBy }} sortdir={{ $sortdir }} :labelname="__('customTrans.order')"></x-table-th>
 
                         <x-table-th wire:click="setSortBy('active')" name="activation" sortBy={{ $sortBy }}
                             sortdir={{ $sortdir }}></x-table-th>
@@ -47,7 +47,7 @@
                             sortBy={{ $sortBy }} sortdir={{ $sortdir }}></x-table-th>
 
 
-                        <th class="text-center"> <span>{{ __('PFBS.actions') }}</span></th>
+                        <th class="text-center"> <span>{{ __('customTrans.actions') }}</span></th>
 
                     </tr>
 
@@ -78,8 +78,8 @@
                                 <td>
                                     <select wire:model="active" class="form-control bg-white">
 
-                                        <option value="1">{{ __('PFBS.active') }}</option>
-                                        <option value="0">{{ __('PFBS.not active') }}</option>
+                                        <option value="1">{{ __('customTrans.active') }}</option>
+                                        <option value="0">{{ __('customTrans.not active') }}</option>
                                     </select>
                                 </td>
                             @else
@@ -93,7 +93,7 @@
                                         'bg-danger dot-label' => $service->active == 0,
                                         'bg-success dot-label' => $service->active == 1,
                                     ])></div>
-                                    {{ $service->active == 1 ? __('PFBS.active') : __('PFBS.not active') }}
+                                    {{ $service->active == 1 ? __('customTrans.active') : __('customTrans.not active') }}
                                 </td>
                             @endif
 
@@ -111,7 +111,7 @@
                                 <td> <x-input type='date' wire:model="active_to_date" name="active_to_date"
                                         divWidth="12"></x-input> </td>
                             @else
-                                <td>{{ $service->active_to_date }}</td>
+                                <td>{{ $service->active_from_date }}</td>
                             @endif
 
 
@@ -123,9 +123,9 @@
                                         data-toggle="modal"></x-actions>
 
 
-                                    <x-modal width='lg' idName="Servicepreview{{ $service->id }}" footer>
+                                    <x-modal width='lg' idName="Servicepreview{{ $service->id }}">
 
-
+                                     
                                         <livewire:CitzenServices.Details :id="$service->id">
                                         </livewire:CitzenServices.Details>
 
@@ -134,9 +134,9 @@
 
                                     <x-actions edit wire:loading.attr='disabled'
                                         wire:click.prevent='edit({{ $service->id }})'></x-actions>
-                                    
+
                                     <a wire:loading.attr='disabled' class="btn btn-lg text-danger "
-                                        wire:confirm.prompt="{{ __('PFBS.please insert num of services for del') }}\n|{{ $service->num }}"
+                                        wire:confirm.prompt="{{ __('customTrans.please insert num of services for del') }}\n|{{ $service->num }}"
                                         wire:click.prevent='destroy({{ $service->id }})'> <i
                                             class="ti-trash text-danger"></i>
                                     </a>
@@ -160,47 +160,52 @@
         </div>
     </div>
 
-    {{-- SM mobile view --}}
+  {{-- SM mobile view --}}
     <div class="bg-light  d-block d-sm-none " role="region" aria-labelledby="Cap1" tabindex="0">
         <table class=" table hover" id="mytable2">
 
 
             <tr>
-                <th> {{ __('PFBS.service num') }} </th>
-                <th> {{ __('PFBS.service name') }} </th>
+                <th> {{ __('customTrans.service num') }} </th>
+                <th> {{ __('customTrans.service name') }} </th>
                 <th> الترتيب </th>
-                <th> {{ __('PFBS.activation') }} </th>
+                <th> {{ __('customTrans.activation') }} </th>
 
-                <th> {{ __('PFBS.active_from_date') }} </th>
-                <th> {{ __('PFBS.active_to_date') }} </th>
+                <th> {{ __('customTrans.active_from_date') }} </th>
+                <th> {{ __('customTrans.active_to_date') }} </th>
 
-                <th> {{ __('PFBS.url_active_from_date') }}</th>
-                <th>{{ __('PFBS.url_active_to_date') }} </th>
+                <th> {{ __('customTrans.url_active_from_date') }}</th>
+                <th>{{ __('customTrans.url_active_to_date') }} </th>
 
-                <th>{{ __('PFBS.services Responsible') }}</th>
-                <th>{{ __('PFBS.url service') }}</th>
-                <th>{{ __('PFBS.route_name') }}</th>
-                <th>{{ __('PFBS.description') }}</th>
-                <th>{{ __('PFBS.note') }}</th>
-                <th>{{ __('PFBS.home_page_order') }}</th>
-                <th>{{ __('PFBS.teal') }}</th>
-                <th>{{ __('PFBS.deactive_note') }}</th>
+                <th>{{ __('customTrans.services Responsible') }}</th>
+                <th>{{ __('customTrans.url service') }}</th>
+                <th>{{ __('customTrans.route_name') }}</th>
+                <th>{{ __('customTrans.description') }}</th>
+                <th>{{ __('customTrans.note') }}</th>
+                <th>{{ __('customTrans.home_page_order') }}</th>
+                <th>{{ __('customTrans.teal') }}</th>
+                <th>{{ __('customTrans.deactive_note') }}</th>
 
-                <th>{{ __('PFBS.services conditions') }}</th>
-                <th>{{ __('PFBS.actions') }}</th>
+                <th>{{ __('customTrans.services conditions') }}</th>
+                <th>{{ __('customTrans.actions') }}</th>
 
 
             </tr>
 
 
             <tr>
-                @foreach ($this->services as $key => $service)
+            @foreach ($this->services as $key => $service)
+              
+
                     <td> {{ $service->num }} </td>
 
-
+                   
 
                     @if ($editServicesId === $service->id)
-                        {{ $service->name }}
+                
+                    {{ $service->name }}
+                        
+                      
                     @else
                         <td>{{ $service->name }}</td>
                     @endif
@@ -219,10 +224,10 @@
 
                     @if ($editServicesId === $service->id)
                         <td>
-                            <select wire:model="active" class="form-control bg-white ">
+                            <select wire:model="active" class="form-control bg-white " style="width: 150px;">
 
-                                <option value="1">{{ __('PFBS.active') }}</option>
-                                <option value="0">{{ __('PFBS.not active') }}</option>
+                                <option value="1">{{ __('customTrans.active') }}</option>
+                                <option value="0">{{ __('customTrans.not active') }}</option>
                             </select>
                         </td>
                     @else
@@ -232,7 +237,7 @@
                             'text-success' => $service->active == 1,
                         ])>
 
-                            {{ $service->active == 1 ? __('PFBS.active') : __('PFBS.not active') }}
+                            {{ $service->active == 1 ? __('customTrans.active') : __('customTrans.not active') }}
 
 
 
@@ -313,7 +318,7 @@
                     @if ($editServicesId === $service->id)
                         <td>
 
-                            <x-textarea wire:model='note' name='note' :labelname="__('PFBS.note')" divWidth='6'
+                            <x-textarea wire:model='note' name='note' :labelname="__('customTrans.note')" divWidth='6'
                                 rows='4'></x-textarea>
                         </td>
                     @else
@@ -324,7 +329,7 @@
                         <td>
 
                             <x-input type="number" min="0" wire:model='home_page_order'
-                                name='home_page_order' :labelname="__('PFBS.home_page_order')" divWidth='6'></x-input>
+                                name='home_page_order' :labelname="__('customTrans.home_page_order')" divWidth='6'></x-input>
                         </td>
                     @else
                         <td>{{ $service->home_page_order }}</td>
@@ -333,7 +338,7 @@
                     @if ($editServicesId === $service->id)
                         <td>
 
-                            <x-input wire:model='teal' name='teal' :labelname="__('PFBS.teal')" divWidth='6'></x-input>
+                            <x-input wire:model='teal' name='teal' :labelname="__('customTrans.teal')" divWidth='6'></x-input>
                         </td>
                     @else
                         <td>{{ $service->teal }}</td>
@@ -342,7 +347,7 @@
                     @if ($editServicesId === $service->id)
                         <td>
 
-                            <x-textarea wire:model='deactive_note' name='deactive_note' :labelname="__('PFBS.deactive_note')"
+                            <x-textarea wire:model='deactive_note' name='deactive_note' :labelname="__('customTrans.deactive_note')"
                                 divWidth='6' rows='4'></x-textarea>
                         </td>
                     @else
@@ -366,17 +371,17 @@
 
 
                     <td class=" d-flex  justify-content-center">
-
+                      
 
                         @if (!($editServicesId === $service->id))
                             <x-actions edit wire:loading.attr='disabled'
                                 wire:click.prevent='edit({{ $service->id }})'></x-actions>
 
-                            {{-- <a wire:loading.attr='disabled' class="btn btn-lg text-danger "
-                                wire:confirm.prompt="{{ __('PFBS.please insert num of services for del') }}\n|{{ $service->num }}"
+                            <a wire:loading.attr='disabled' class="btn btn-lg text-danger "
+                                wire:confirm.prompt="{{ __('customTrans.please insert num of services for del') }}\n|{{ $service->num }}"
                                 wire:click.prevent='destroy({{ $service->id }})'> <i
                                     class="ti-trash text-danger"></i>
-                            </a> --}}
+                            </a>
                         @else
                             <x-actions make wire:loading.attr='disabled' wire:click.prevent='update'></x-actions>
                             <x-actions cancel wire:click.prevent='cancelEdit'></x-actions>
@@ -388,8 +393,15 @@
 
 
                     </td>
-                @endforeach
-            </tr>
+
+
+
+
+
+
+               
+            @endforeach
+        </tr>
 
         </table>
 

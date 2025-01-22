@@ -11,24 +11,28 @@ return new class extends Migration
     {
         Schema::create('citzen_services', function (Blueprint $table) {
             $table->id();
-            $table->integer('num')->nullable();
+            $table->tinyint('num')->nullable();
             $table->string('name');
             $table->text('description')->nullable();
             $table->text('note')->nullable();
             $table->text('conditions')->nullable();
             $table->boolean('active')->default(true);
-			 $table->string('deactive_note')->nullable();
+			 $table->json('properties')->nullable();
+		     $table->string('deactive_note')->nullable();
             $table->date('url_active_from_date')->nullable();
             $table->date('url_active_to_date')->nullable();
             $table->date('active_from_date')->nullable();
             $table->date('active_to_date')->nullable();
             $table->string('url')->nullable();
+		    $table->string('route_name')->unique();
+			$table->tinyint('home_page_order')->nullable();
             $table->foreignId('status_id')->nullable()->constrained('statuses');
-			   $table->string('teal')->nullable();
-            $table->string('Responsible')->nullable();
+			$table->string('teal')->nullable();
+            $table->string('responsible')->nullable();
             $table->json('logo1')->nullable();
             $table->json('logo2')->nullable();
-            $table->timestamps();
+			$table->string('card_header')->nullable();
+		    $table->timestamps();
         });
     }
  

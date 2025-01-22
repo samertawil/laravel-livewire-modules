@@ -2,7 +2,6 @@
 
 namespace App\Livewire\CitzenServices;
 
-use App\Models\Status;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\CitzenServices;
@@ -19,41 +18,45 @@ class ServicesResoucre extends Component
     public $url;
     public $status_id;
     public $Responsible;
-
     public $url_active_from_date;
-    #[Validate(['after_or_equal:now', 'date_format:Y-m-d'])]
     public $url_active_to_date;
-
     public $active_from_date;
-    #[Validate(['after_or_equal:now', 'date_format:Y-m-d'])]
     public $active_to_date;
     #[Validate(['required'])]
     public $active = 1;
     public $description;
     public $note;
     public $conditions;
-    #[Validate(['unique:citzen_services,route_name'])]
     public $route_name;
 
     #[Validate(['logo1.*' => 'image|max:2048'])]
     public $logo1 = [];
-
+    #[Validate(['logo2.*' => 'image|max:2048'])]
+    public $logo2 = [];
     public $home_page_order;
     public $teal;
     public $deactive_note;
     protected $serviceId = 4;
-    public $Card_header;
-
-
+    public $proparty;
 
     use WithFileUploads;
 
+ 
+
+    protected  $listeners = ['citzen-services-properties' => 'getProp'];
+
+    public function getProp($value)
+    {
+
+        $this->proparty = ($value['proparty']);
+    }
 
     public function store()
     {
-
+       
+        $this->validate();
         $logo1 =  UploadingFilesTrait::uploadsFiles($this->logo1, 'logo1', 'public');
-        $Card_header =  UploadingFilesTrait::uploadSingleFile($this->Card_header, 'Card_header', 'public');
+        $logo2 =  UploadingFilesTrait::uploadsFiles($this->logo2, 'logo2', 'public');
 
  
         CitzenServices::create([
@@ -75,27 +78,23 @@ class ServicesResoucre extends Component
             'teal' => $this->teal,
             'deactive_note' => $this->deactive_note,
             'logo1' => $logo1,
-            'card_header' => $Card_header,
+            'logo2' => $logo2,
+            'properties' => $this->proparty,
+
+
 
 
         ]);
 
         FlashMsgTraits::created();
-
-        $this->reset();
     }
-
-
-
     public function render()
     {
-        $title = __('PFBS.services managment');
         $serviceActivation = CitzenServices::where('id', $this->serviceId)->where('active', true)->first();
 
-        // if (empty($serviceActivation)) {
-        //     abort(404);
-        // }
-
-        return view('livewire.citzen-services.services-resoucre')->layoutData(['title' => $title, 'pageTitle' => $title]);
+        if (empty($serviceActivation)) {
+            abort(404);
+        }
+        return view('livewire.citzen-services.services-resoucre');
     }
 }

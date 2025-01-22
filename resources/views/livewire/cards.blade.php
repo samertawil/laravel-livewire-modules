@@ -41,7 +41,7 @@
 
                         <a href="{{ $service->url }}" class="text-dark text-hover-primary mb-1 font-size-lg"
                             style=" font-weight: bold">{{ $service->name }}</a> <span
-                            class="text-muted mx-2">{{ $service->active == 1 ? __('ucModule.active') : __('ucModule.not active') }}</span>
+                            class="text-muted mx-2">{{ $service->active == 1 ? __('customTrans.active') : __('customTrans.not active') }}</span>
                     </div>
                     <div class="d-flex flex-column font-weight-bold  " style="line-height: 22px;">
                         @if ($service->conditions)
@@ -58,7 +58,7 @@
                             @endforeach
                         @endif
                         <div class="d-flex justify-content-center">
-                            <x-tag-a :route="route($service->route_name)" :name="__('ucModule.sign for services')" class="btn-primary"
+                            <x-tag-a :route="route($service->route_name)" :name="__('customTrans.sign for services')" class="btn-primary"
                                 style="width: 140px;"></x-tag-a>
                         </div>
                     </div>

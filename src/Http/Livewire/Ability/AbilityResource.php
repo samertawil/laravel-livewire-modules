@@ -154,7 +154,7 @@ class AbilityResource extends Component
     public function render()
     {
 
-        $pageTitle = __('ucModule.create ability');
+        $pageTitle = __('customTrans.create ability');
         $title = $pageTitle;
 
         $abilities = Ability::with('moduleName')

@@ -19,7 +19,7 @@
                         <a data-toggle="collapse" href="#collapse-system" aria-expanded="true"
                             aria-controls="collapse-system" id="heading-system" class="d-block ">
                             <i class="fa fa-chevron-down pull-right mx-2 "></i>
-                            {{ __('ucModule.module_createion_name') }}
+                            {{ __('customTrans.module_createion_name') }}
                         </a>
 
  
@@ -34,7 +34,7 @@
                             <a data-toggle="collapse" href="#collapse-status" aria-expanded="true"
                                 aria-controls="collapse-status" id="heading-status" class="d-block ">
                                 <i class="fa fa-chevron-down pull-right mx-2 "></i>
-                                {{ __('ucmodule.create_new_status') }}
+                                {{ __('customTrans.create_new_status') }}
                             </a>
                             <div id="collapse-status" class="collapse show" aria-labelledby="heading-status">
                                 <p class="card-header"> </p>
@@ -89,7 +89,7 @@
               
                     <div class="col-sm-12 col-md-3"  >
                         <x-select id="id1" :options="$statuses->whereNotnull('p_id')->whereNull('p_id_sub')->pluck('status_name', 'id')" 
-                            :ChoseTitle="__('ucModule.p_id_sub')"
+                            :ChoseTitle="__('customTrans.p_id_sub')"
                              divWidth="12"
                              class="js-select2" jsSelect2 wireIgone
                             wire:model.live='PidSearch' name="PidSearch"></x-select>
@@ -97,7 +97,7 @@
 
                     <div class="col-sm-12 col-md-3">
                         <x-select  name="SystemName" :options="$systems_data->pluck('system_name', 'id')" 
-                            :ChoseTitle="__('ucModule.module_name')"
+                            :ChoseTitle="__('customTrans.module_name')"
                              divWidth="12"
                            
                             wire:model.live='SystemName'></x-select>
@@ -129,7 +129,7 @@
                                     name="used_in_system_id" sortBy={{ $sortBy }}
                                     sortdir={{ $sortdir }}></x-table-th>
 
-                                <th>{{__('ucModule.actions')}}</th>
+                                <th>{{__('customTrans.actions')}}</th>
                             </thead>
                             <tbody>
 

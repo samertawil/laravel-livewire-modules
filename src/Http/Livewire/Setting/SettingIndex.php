@@ -78,7 +78,7 @@ class SettingIndex extends Component
     //#[Layout('components.layouts.metronic7-simple-app')]
     public function render()
     {
-        $pageTitle= __('ucModule.setting')  ; 
+        $pageTitle= __('customTrans.setting')  ; 
 
         $settings = Setting::orderBy($this->sortBy, $this->sortdir)->paginate($this->perPage);
 

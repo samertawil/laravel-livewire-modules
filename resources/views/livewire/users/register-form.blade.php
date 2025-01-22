@@ -6,7 +6,7 @@
                      <div class="card">
 
                          @if (!Auth::check())
-                             <div class="card-header"><span class="h5">{{__('ucModule.create new account')}}</span></div>
+                             <div class="card-header"><span class="h5">{{__('customTrans.create new account')}}</span></div>
                          @endif
 
                          <div class="card-body">

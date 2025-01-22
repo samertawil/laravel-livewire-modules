@@ -77,7 +77,7 @@ class UserRoleCreate extends Component
  
   public function render()
   {
-    $pageTitle= __('ucModule.user role');
+    $pageTitle= __('customTrans.user role');
   
     $roles_group = Role::get();
 

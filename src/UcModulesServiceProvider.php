@@ -42,6 +42,12 @@ class UcModulesServiceProvider extends ServiceProvider
             [__DIR__ . '/../config/myConstants.php' => config_path('myConstants.php'),],
             'config'
         );
+		
+		
+		    $this->publishes(
+            [__DIR__ . '/../config/attributesConst.php' => config_path('attributesConst.php'),],
+            'config'
+        );
 
         $this->publishes([__DIR__.'/../routes/user.php'=>base_path('routes/user.php'),
         ],'routes');

@@ -4,9 +4,9 @@
         <x-breadcrumb>
 
             <li class="breadcrumb-item"><a href="{{ route('citzen.services.index') }}"
-                    class="text-muted">{{ __('ucModule.services index') }} </a></li>
+                    class="text-muted">{{ __('PFBS.services index') }} </a></li>
             <li class="breadcrumb-item"><a href="{{ route('citzen.services.resouces') }}"
-                    class="text-muted">{{ __('ucModule.services resource') }} </a></li>
+                    class="text-muted">{{ __('PFBS.services resource') }} </a></li>
 
         </x-breadcrumb>
 
@@ -16,16 +16,16 @@
     <div class="row">
 
         <div class="col-6">
-            <x-input type='number' min='1' wire:model='num' name='num' label :labelname="__('ucModule.service num')"
+            <x-input type='number' min='1' wire:model='num' name='num' label :labelname="__('PFBS.service num')"
                 divWidth='8'></x-input>
 
-            <x-input wire:model='name' name='name' label :labelname="__('ucModule.service name')" divWidth='8'></x-input>
+            <x-input wire:model='name' name='name' label :labelname="__('PFBS.service name')" divWidth='8'></x-input>
 
             <x-input wire:model='url' name='url' label divWidth='8'></x-input>
 
             <x-input wire:model='status_id' name='status_id' label divWidth='8'></x-input>
 
-            <x-input wire:model='Responsible' name='Responsible' :labelname="__('ucModule.services Responsible')" label divWidth='8'></x-input>
+            <x-input wire:model='Responsible' name='Responsible' :labelname="__('PFBS.services Responsible')" label divWidth='8'></x-input>
         </div>
 
         <div class="col-6">
@@ -43,8 +43,8 @@
 
             <div class="d-md-flex">
 
-                <x-radio wire:model='active' name='active' :value1='1' :value2='0' label :labelname="__('ucModule.activation')"
-                    :value_title1="__('ucModule.active')" :value_title2="__('ucModule.not active')" divclass="mt-5"></x-radio>
+                <x-radio wire:model='active' name='active' :value1='1' :value2='0' label :labelname="__('PFBS.activation')"
+                    :value_title1="__('PFBS.active')" :value_title2="__('PFBS.not active')" divclass="mt-5"></x-radio>
 
 
                 <x-input wire:model='route_name' name='route_name' divlclass="mt-4" label divWidth='5'></x-input>
@@ -57,17 +57,17 @@
     <div class="row">
         <x-textarea wire:model='description' name='description' label divWidth='6' rows='4'></x-textarea>
 
-        <x-textarea wire:model='note' name='note' label :labelname="__('ucModule.note')" divWidth='6' rows='4'></x-textarea>
+        <x-textarea wire:model='note' name='note' label :labelname="__('PFBS.note')" divWidth='6' rows='4'></x-textarea>
     </div>
 
     <div class="row align-items-center">
 
-        <x-textarea wire:model='conditions' name='conditions' data-provide="markdown" label :labelname="__('ucModule.conditions')"
+        <x-textarea wire:model='conditions' name='conditions' data-provide="markdown" label :labelname="__('PFBS.conditions')"
             divWidth='6' rows='10'></x-textarea>
 
 
         <div class="col-5">
-            <x-textarea wire:model='deactive_note' name='deactive_note' label :labelname="__('ucModule.deactive_note')" divWidth='12'
+            <x-textarea wire:model='deactive_note' name='deactive_note' label :labelname="__('PFBS.deactive_note')" divWidth='12'
                 rows='4' span description_field1=" بحال ايقاف الخدمة"></x-textarea>
 
             <x-input type="number" min="0" wire:model='home_page_order' name='home_page_order' label
@@ -81,7 +81,7 @@
 
     </div>
     @if ($logo1)
-        {{ __('ucModule.preview') }}
+        {{ __('PFBS.preview') }}
         @foreach ($logo1 as $image)
             <img src="{{ $image->temporaryUrl() }}" class="w-50 w-lg-25 h-50 h-lg-25 p-4">
         @endforeach
@@ -99,54 +99,96 @@
             <li class="invalid-feedback"> {{ $message }} </li>
         @enderror
     </div>
-    @if ($logo2)
-        {{ __('ucModule.preview') }}
-        @foreach ($logo2 as $image)
-            <img src="{{ $image->temporaryUrl() }}" class="w-50 w-lg-25 h-50 h-lg-25 p-4">
-        @endforeach
+
+
+    @if ($Card_header)
+    {{ __('PFBS.preview') }}
+  
+        <img src="{{ $Card_header->temporaryUrl() }}" class="w-50 w-lg-25 h-50 h-lg-25 p-4">
 
     @endif
-    <div class="form-group">
-        <label for="card_img">اضافة صورة 2</label>
-        <input type="file" wire:model='logo2' name="logo2[]" @class ([
-            ' custom-file',
-            'form-control',
-            'is-invalid' => $errors->has('logo2.*'),
-        ]) accept="image/*" multiple>
-        @error('logo2.*')
-            <li class="invalid-feedback"> {{ $message }} </li>
-        @enderror
-    </div>
+
+<div class="form-group">
+    <label for="card_img">Card_header1</label>
+    <input type="file" wire:model='Card_header' name="Card_header" @class ([
+        ' custom-file',
+        'form-control',
+        'is-invalid' => $errors->has('Card_header'),
+    ]) accept="image/*"  >
+
+    @error('Card_header')
+        <li class="invalid-feedback"> {{ $message }} </li>
+    @enderror
+</div>
+
+
 
     <div class="row">
 
     </div>
 
 
-   
 
-
-
-
-    <x-modal idName="PropartiesModal" :title="__('ucModule.add more proparty')">
+{{-- 
+    <x-modal idName="PropartiesModal" :title="__('PFBS.add more proparty')">
 
 
         <livewire:AttributesList></livewire:AttributesList>
 
 
-
-
-    </x-modal>
+    </x-modal> --}}
 
 
     <div class="d-flex justify-content-end">
 
-        <x-button class="mx-2" data-target="#PropartiesModal" data-toggle="modal" label="add more proparty">
-        </x-button>
+        {{-- <x-button class="mx-2" data-target="#PropartiesModal" data-toggle="modal" label="add more proparty">
+        </x-button> --}}
 
 
-        <x-button wire:click.prevent='store'></x-button>
+        <x-button default_class="btn ripple btn-light-primary" style="width: 100px;"
+            wire:click.prevent='store'></x-button>
     </div>
 
+
+    {{-- ////////////////////////////// --}}
+  
+ 
+
+    {{-- <div>
+        
+            <div class="pr-3" name="properties" id="properties">
+
+            @foreach ($attributeValue as $index => $question)
+                <div class=" row align-items-center">
+
+                    <Select @class(['form-control  w-25']) wire:model='attributeColumn.{{ $index }}'>
+                        <option value="">اختار اعمدة</option>
+
+                        @foreach ($all_templates2 ?? [] as $template1)
+                            <option value="{{ $template1->status_name }}">
+                                {{ $template1->status_name }}
+                            </option>
+                        @endforeach
+                    </Select>
+
+                    <x-input type="file" wire:model="attributeValue.{{ $index }}"
+                        name="attributeValue{{ $index }}" divWidth="4" marginBottom="0"></x-input>
+
+                    <x-actions mins wire:click.prevent='removeQuestion({{ $index }})'></x-actions>
+
+                </div>
+            @endforeach
+
+        </div>
+
+        <x-actions plus wire:click.prevent='addQuestion'></x-actions>
+
+        <p> {{ __('customTrans.add new colums') }} <span><a href="{{ route('status') }}"
+          target="_blank">{{ __('customTrans.here') }} </a> </span></p>
+
+    </div>   --}}
+
+
+    
 
 </div>

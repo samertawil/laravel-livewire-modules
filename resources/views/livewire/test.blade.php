@@ -51,7 +51,7 @@
 
 
                                 <span class="mx-1  btn btn-sm btn-light-primary"
-                                    style="font-size: 8px; font-weight: bold; ">{{ $service->active == 1 ? __('ucModule.active') : __('ucModule.deactivated') }}</span>
+                                    style="font-size: 8px; font-weight: bold; ">{{ $service->active == 1 ? __('customTrans.active') : __('customTrans.deactivated') }}</span>
                             </div>
 
 
@@ -68,13 +68,13 @@
                         @if ($service->active == 1)
                             <div class="card-footer d-flex justify-content-between py-5" style="border-top: none;">
 
-                                <x-tag-a :route="route($service->route_name)" :name="__('ucModule.sign in')"
+                                <x-tag-a :route="route($service->route_name)" :name="__('customTrans.sign in')"
                                     default_class="btn btn-light-primary font-weight-bold"></x-tag-a>
 
                                 <x-tag-a data-target="#conditionsModal{{ $service->id }}" data-toggle="modal"
-                                    :route="route($service->route_name)" :name="__('ucModule.sign in')"
+                                    :route="route($service->route_name)" :name="__('customTrans.sign in')"
                                     default_class="btn btn-outline-secondary font-weight-bold"
-                                    :name="__('ucModule.conditions')"></x-tag-a>
+                                    :name="__('customTrans.conditions')"></x-tag-a>
                             </div>
                         @endif
                         
@@ -82,7 +82,7 @@
                             <div class="d-flex flex-column font-weight-bold  " style="line-height: 22px;">
                                 @if ($service->conditions)
                                     <span class="text-danger mb-4"
-                                        style="text-decoration: underline; font-weight: bold">{{ __('ucModule.conditions') }}
+                                        style="text-decoration: underline; font-weight: bold">{{ __('customTrans.conditions') }}
                                         :</span>
 
 
@@ -99,7 +99,7 @@
                                 @if ($service->note)
                                     <span class="text-primary mb-4"
                                         style="text-decoration: underline; font-weight: bold">
-                                        {{ __('ucModule.notes') }}
+                                        {{ __('customTrans.notes') }}
                                         :</span>
                                     {{ $service->note }}
                                 @endif
@@ -108,7 +108,7 @@
                                 <x-slot:ModalButton>
 
                                     <div class="d-flex justify-content-center">
-                                        <x-tag-a :route="route($service->route_name)" :name="__('ucModule.sign in')"
+                                        <x-tag-a :route="route($service->route_name)" :name="__('customTrans.sign in')"
                                             default_class="btn btn-light-primary"
                                             style="width: 100px; height: 38px; font-size:13px;"></x-tag-a>
                                     </div>

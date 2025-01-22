@@ -122,13 +122,13 @@ class UserIndex extends Component
     {
 		
 	        // if(Gate::denies('user.resource')) {
-        //     abort(403,__('ucModule.you have no access'));
+        //     abort(403,__('customTrans.you have no access'));
         //  }
 
 
 		 
-        $title = __('ucModule.users') ;
-        $pageTitle =  __('ucModule.users') ;
+        $title = __('customTrans.users') ;
+        $pageTitle =  __('customTrans.users') ;
 
         $users = User::SearchName($this->search)
             ->SearchUserType($this->searchUsertype)

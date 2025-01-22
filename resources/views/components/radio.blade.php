@@ -22,7 +22,7 @@
 <div @class(["form-group mb-3 col-md-4 col-lg-$divWidth",$divclass])>
 
     @if ($label)
-          <label @class(["col-form-label  $labelclass "])>{{$labelname??  __("ucModule.$name") }}</label>
+          <label @class(["col-form-label  $labelclass "])>{{$labelname??  __("customTrans.$name") }}</label>
     @endif
 
 

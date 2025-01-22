@@ -2,7 +2,7 @@
     'CurrentPageTitle' => '',
     'button' => '',
     'type' => '',
-    'label' => __('ucModule.save'),
+    'label' => __('customTrans.save'),
     'divlclass' => '',
     'route' => null,
     'iclass' => '',
@@ -16,7 +16,7 @@
     
   
     <ul class="breadcrumb breadcrumb-transparent breadcrumb-dash font-weight-bold p-0 my-2 font-size-sm">
-        <li class="breadcrumb-item"><a href="{{route('home')}}" class="text-muted">{{__('ucModule.home page')}} </a></li>
+        <li class="breadcrumb-item"><a href="{{route('home')}}" class="text-muted">{{__('customTrans.home page')}} </a></li>
         {{$slot ?? ''}}
     </ul>
        

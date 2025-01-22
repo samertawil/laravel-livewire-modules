@@ -9,7 +9,7 @@
  
 
 
-<th  {{$attributes}} scope="col" ><span>{{$labelname?? __("ucModule.$name") }}</span>
+<th  {{$attributes}} scope="col" ><span>{{$labelname?? __("customTrans.$name") }}</span>
    
     @if ($this->sortBy !==     $name   )
         <button class="btn text-primary "><i class="ti-exchange-vertical text-primary"></i>

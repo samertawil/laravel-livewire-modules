@@ -3,11 +3,11 @@
 
     <x-slot:crumb>
 
-        <x-breadcrumb button data-target="#abilityCreateModel1" data-toggle="modal" :label="__('ucModule.create ability')">
+        <x-breadcrumb button data-target="#abilityCreateModel1" data-toggle="modal" :label="__('customTrans.create ability')">
            
-                <li class="breadcrumb-item"><a href="{{route('user.index')}}" class="text-muted">{{__('ucModule.users')}} </a></li>
-                <li class="breadcrumb-item"><a href="{{route('ability.index')}}" class="text-muted">{{__('ucModule.abilities')}} </a></li>
-                <li class="breadcrumb-item"><a href="{{route('role.index')}}" class="text-muted">{{__('ucModule.role group')}} </a></li>
+                <li class="breadcrumb-item"><a href="{{route('user.index')}}" class="text-muted">{{__('customTrans.users')}} </a></li>
+                <li class="breadcrumb-item"><a href="{{route('ability.index')}}" class="text-muted">{{__('customTrans.abilities')}} </a></li>
+                <li class="breadcrumb-item"><a href="{{route('role.index')}}" class="text-muted">{{__('customTrans.role group')}} </a></li>
          
         </x-breadcrumb>
 
@@ -15,7 +15,7 @@
 
 
 
-    <x-modal idName="abilityCreateModel1" width="xl" :title="__('ucModule.create ability')">
+    <x-modal idName="abilityCreateModel1" width="xl" :title="__('customTrans.create ability')">
         <livewire:ability.ability-create></livewire:ability.ability-create>
     </x-modal>
 
@@ -50,7 +50,7 @@
 
 
 
-                        <th class="text-center">{{ __('ucModule.actions') }}</th>
+                        <th class="text-center">{{ __('customTrans.actions') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -80,8 +80,8 @@
 
                                 <select wire:model="editAbilityActivation" class="form-control bg-white">
 
-                                    <option value="1">{{ __('ucModule.active') }}</option>
-                                    <option value="0">{{ __('ucModule.not active') }}</option>
+                                    <option value="1">{{ __('customTrans.active') }}</option>
+                                    <option value="0">{{ __('customTrans.not active') }}</option>
                                 </select>
                                 <label for="">
 
@@ -98,7 +98,7 @@
                                     'bg-danger dot-label ' => $ability->activation == 0,
                                 ])></div>
 
-                                {{ $ability->activation == 1 ? __('ucModule.active') : __('ucModule.not active') }}
+                                {{ $ability->activation == 1 ? __('customTrans.active') : __('customTrans.not active') }}
                             </td>
                         @endif
 
@@ -120,8 +120,8 @@
 
                                 <x-modal idName="abilityPreview1">
 
-                                    {{ __('ucModule.url') }} : {{ $ability->url }}</br>
-                                    {{ __('ucModule.created_at') }} : {{ myDateStyle1($ability->created_at) }}
+                                    {{ __('customTrans.url') }} : {{ $ability->url }}</br>
+                                    {{ __('customTrans.created_at') }} : {{ myDateStyle1($ability->created_at) }}
 
                                 </x-modal>
                             </td>

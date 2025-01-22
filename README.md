@@ -49,6 +49,7 @@ publish :
 	 include __DIR__ . '/citzenServices.php';
 
     });</span></pre>
+	
     
 
 Helper function publish : edit composer.json autoload section and add 
@@ -59,3 +60,6 @@ Helper function publish : edit composer.json autoload section and add
         ]</span></pre>
 		
 <pre><span> composer dump-autoload;</span></pre>
+
+Add constant value for attributesConst.php
+	 

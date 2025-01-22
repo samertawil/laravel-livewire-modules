@@ -11,7 +11,7 @@
 <div @class([' my-4 ', $divlclass,$text_dir])>
 
     <button type="{{ $type }}"
-        {{ $attributes->class(['btn btn-md btn-info']) }}>{{ $label ? __("ucModule.$label") :  __("ucModule.save") }}
+        {{ $attributes->class(['btn btn-md btn-info']) }}>{{ $label ? __("customTrans.$label") :  __("customTrans.save") }}
         @if ($iclass)
             <i class="{{ $iclassName }}"></i>
         @endif

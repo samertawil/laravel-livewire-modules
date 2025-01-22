@@ -67,7 +67,7 @@ class AbilityCreate extends Component
 
         // $moduleNames=CacheStatusModelServices::getData()->where('p_id_sub',1121);
 
-        $pageTitle = __('ucModule.create ability');
+        $pageTitle = __('customTrans.create ability');
 
         return view('livewire.ability.ability-create')->title($pageTitle);
     }

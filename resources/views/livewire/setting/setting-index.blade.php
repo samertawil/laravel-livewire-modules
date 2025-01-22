@@ -2,7 +2,7 @@
    
     <x-slot:crumb>
 
-        <x-breadcrumb button data-target="#SettingCreateModel1" data-toggle="modal" :label="__('ucModule.create_new_setting')">
+        <x-breadcrumb button data-target="#SettingCreateModel1" data-toggle="modal" :label="__('customTrans.create_new_setting')">
            
                 <li class="breadcrumb-item"><a href="" class="text-muted">Apps </a></li>
                 <li class="breadcrumb-item"><a href="" class="text-muted">profile </a></li>
@@ -15,7 +15,7 @@
     @push('css')
     @endpush
 
-    <x-modal idName="SettingCreateModel1" :title="__('ucModule.create_new_setting')"> 
+    <x-modal idName="SettingCreateModel1" :title="__('customTrans.create_new_setting')"> 
         <livewire:Setting.setting-create/>
     </x-modal>
 
@@ -35,12 +35,12 @@
                         <x-table-th wire:click="setSortBy('value')" name="value" sortBy={{ $sortBy }}
                             sortdir={{ $sortdir }} ></x-table-th>
 
-                        <th  name="description">{{__('ucModule.description')}}</th> 
+                        <th  name="description">{{__('customTrans.description')}}</th> 
                        
-                        <th  name="notes">{{__('ucModule.notes')}}</th> 
+                        <th  name="notes">{{__('customTrans.notes')}}</th> 
 
                      
-                        <th class="text-center">{{__('ucModule.actions')}}</th>
+                        <th class="text-center">{{__('customTrans.actions')}}</th>
                     </tr>
                 </thead>
                 <tbody>

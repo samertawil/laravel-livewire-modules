@@ -18,7 +18,7 @@
                     <x-input name="description" wire:model="description" label="yes"></x-input>
 
                     <x-radio type="radio" wire:model="active" name="active" label="yes" req value1="1"
-                        value2="0" divclass="mx-5" :value_title1="__('ucModule.active')" :value_title2="__('ucModule.not active')"></x-radio>
+                        value2="0" divclass="mx-5" :value_title1="__('customTrans.active')" :value_title2="__('customTrans.not active')"></x-radio>
 
                 </div>
 
@@ -41,13 +41,13 @@
                     <th>#</th>
 
                     <x-table-th wire:click="setSortBy('name')" name="name" sortBy={{ $sortBy }}
-                        sortdir={{ $sortdir }}>{{ __('ucModule.module_name') }}</x-table-th>
+                        sortdir={{ $sortdir }}>{{ __('customTrans.module_name') }}</x-table-th>
 
                     <x-table-th wire:click="setSortBy('active')" name="active" sortBy={{ $sortBy }}
-                        sortdir={{ $sortdir }}>{{ __('ucModule.activation') }}</x-table-th>
+                        sortdir={{ $sortdir }}>{{ __('customTrans.activation') }}</x-table-th>
 
-                    <th>{{ __('ucModule.description') }}</th>
-                    <th class="text-center">{{ __('ucModule.actions') }}</th>
+                    <th>{{ __('customTrans.description') }}</th>
+                    <th class="text-center">{{ __('customTrans.actions') }}</th>
 
                 </thead>
                 <tbody>
@@ -66,8 +66,8 @@
                                 <td>
                                     <select wire:model="editActive" name='active' class="form-control bg-white mt-3">
 
-                                        <option value="1">{{ __('ucModule.active') }}</option>
-                                        <option value="0">{{ __('ucModule.not active') }}</option>
+                                        <option value="1">{{ __('customTrans.active') }}</option>
+                                        <option value="0">{{ __('customTrans.not active') }}</option>
                                     </select>
                                     <label for="">
 
@@ -78,7 +78,7 @@
                                     'text-success' => ($module_data->active == '1'),
                                     'text-danger' => ($module_data->active == "0"),
                                 ])>
-                                    {{ $module_data->active == '1' ? __('ucModule.active') : __('ucModule.not active') }}
+                                    {{ $module_data->active == '1' ? __('customTrans.active') : __('customTrans.not active') }}
                                 </td>
                             @endif
 

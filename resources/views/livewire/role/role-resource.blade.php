@@ -3,11 +3,11 @@
 
     <x-slot:crumb>
 
-        <x-breadcrumb button :route="route('role.create')" :label="__('ucModule.create new role')">
+        <x-breadcrumb button :route="route('role.create')" :label="__('customTrans.create new role')">
          
-                <li class="breadcrumb-item"><a href="{{route('user.index')}}" class="text-muted">{{__('ucModule.users')}} </a></li>
-                <li class="breadcrumb-item"><a href="{{route('ability.index')}}" class="text-muted">{{__('ucModule.abilities')}} </a></li>
-                <li class="breadcrumb-item"><a href="{{route('role.index')}}" class="text-muted">{{__('ucModule.role group')}} </a></li>
+                <li class="breadcrumb-item"><a href="{{route('user.index')}}" class="text-muted">{{__('customTrans.users')}} </a></li>
+                <li class="breadcrumb-item"><a href="{{route('ability.index')}}" class="text-muted">{{__('customTrans.abilities')}} </a></li>
+                <li class="breadcrumb-item"><a href="{{route('role.index')}}" class="text-muted">{{__('customTrans.role group')}} </a></li>
         
 
         </x-breadcrumb>
@@ -40,11 +40,11 @@
                         <th>#</th>
 
                         <x-table-th wire:click="setSortBy('name')" name="name" sortBy={{ $sortBy }}
-                            sortdir={{ $sortdir }} :labelname="__('ucModule.group name')" ></x-table-th>
+                            sortdir={{ $sortdir }} :labelname="__('customTrans.group name')" ></x-table-th>
 
-                        <th >{{ __('ucModule.abilities') }}</th>
+                        <th >{{ __('customTrans.abilities') }}</th>
 
-                        <th class="text-center">{{ __('ucModule.actions') }}</th>
+                        <th class="text-center">{{ __('customTrans.actions') }}</th>
                     </tr>
                 </thead>
                 <tbody >
@@ -67,7 +67,7 @@
 
                                 <x-modal idName="roleGroupPreview{{ $role->id }}"
                                     modalType="modal-dialog-scrollable" :title="$role->name">
-                                   {{__('ucModule.created_at')}} : {{ myDateStyle1($role->created_at) }} </br>
+                                   {{__('customTrans.created_at')}} : {{ myDateStyle1($role->created_at) }} </br>
                                     </br>
                                     @foreach ($role->abilities as $abilities)
                                         <li class="m-1">{{ $abilities }}</li>

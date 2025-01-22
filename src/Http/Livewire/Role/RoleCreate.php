@@ -76,7 +76,7 @@ class RoleCreate extends Component
     public function render()
     {
        
-        $pageTitle = __('ucModule.create new role');
+        $pageTitle = __('customTrans.create new role');
     
 
         $abilities_module = Ability::select('module_id')->groupby('module_id')->get();

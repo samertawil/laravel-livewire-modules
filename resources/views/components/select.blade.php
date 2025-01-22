@@ -14,7 +14,7 @@
     'id' => '',
     'divWidth' => '3',
     'divlclass' => '',
-    'ChoseTitle' => __('ucModule.choose one'),
+    'ChoseTitle' => __('customTrans.choose one'),
     'divId'=>null,
     'jsSelect2'=>null,
     'wireIgone'=>null,
@@ -29,7 +29,7 @@
 
 
     @if ($label)
-        <label for="{{ $id }}" @class(["col-form-label   $labelclass "])>{{ $labelname ? $labelname : __("ucModule.$name") }}
+        <label for="{{ $id }}" @class(["col-form-label   $labelclass "])>{{ $labelname ? $labelname : __("customTrans.$name") }}
             @if ($req)
                 <span class="text-danger">*</span>
             @endif

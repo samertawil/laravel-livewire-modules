@@ -8,7 +8,7 @@
             <x-input type="text" name="ability_name" dir="ltr" autofocus label='yes' req
                 description_field="ex: ModelName.functionName" wire:model="ability_name"></x-input>
 
-            <x-input type="text" name="ability_description" label='yes' req :description_field="__('ucModule.ex_ability_desc')"
+            <x-input type="text" name="ability_description" label='yes' req :description_field="__('customTrans.ex_ability_desc')"
                 wire:model="ability_description"></x-input>
 
 
@@ -16,7 +16,7 @@
 
             <div class="mx-5">
                 <x-radio type="radio" name="activation" label="yes" req value1="1" value2="0" divWidth=12
-                    wire:model="activation" :value_title1="__('ucModule.active')" :value_title2="__('ucModule.not active')"></x-radio>
+                    wire:model="activation" :value_title1="__('customTrans.active')" :value_title2="__('customTrans.not active')"></x-radio>
             </div>
 
             <x-select name="module_id" label='yes' wire:model="module_id" :options="$this->moduleNames->pluck('name', 'id')" />
@@ -36,8 +36,8 @@
 
     </form>
     <div class="text-center">
-        <p> {{ __('ucModule.add new module') }} <span><a href="{{ route('ability.module.index') }}"
-                    target="_blank">{{ __('ucModule.here') }} </a> </span></p>
+        <p> {{ __('customTrans.add new module') }} <span><a href="{{ route('ability.module.index') }}"
+                    target="_blank">{{ __('customTrans.here') }} </a> </span></p>
     </div>
 
     {{-- @livewire('ability.ability-index',['lazy'=>'true']) --}}

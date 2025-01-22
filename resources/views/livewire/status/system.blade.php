@@ -32,9 +32,9 @@
             <table class="table  my-5">
                 <thead>
                     <th>#</th>
-                    <th>{{ __('ucModule.module_name') }}</th>
-                    <th>{{ __('ucModule.active_status') }} </th>
-                    <th>{{ __('ucModule.description') }}</th>
+                    <th>{{ __('customTrans.module_name') }}</th>
+                    <th>{{ __('customTrans.active_status') }} </th>
+                    <th>{{ __('customTrans.description') }}</th>
                 </thead>
                 <tbody>
 
@@ -46,7 +46,7 @@
                                 'text-success' => ($system_data->active = 1),
                                 'text-danger' => ($system_data->active = 0),
                             ])>
-                                {{ $system_data->active = 1 ? __('ucModule.active') : __('ucModule.not active') }}</td>
+                                {{ $system_data->active = 1 ? __('customTrans.active') : __('customTrans.not active') }}</td>
                             <td>{{ $system_data->description }}</td>
 
                         </tr>

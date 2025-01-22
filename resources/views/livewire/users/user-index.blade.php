@@ -4,11 +4,11 @@
 
 
     <x-slot:crumb>
-        <x-breadcrumb   button   data-target="#UserCreateModel1" data-toggle="modal" :label="__('ucModule.create new account')">
+        <x-breadcrumb   button   data-target="#UserCreateModel1" data-toggle="modal" :label="__('customTrans.create new account')">
            
-                <li class="breadcrumb-item"><a href="{{route('user.index')}}" class="text-muted">{{__('ucModule.users')}} </a></li>
-                <li class="breadcrumb-item"><a href="{{route('ability.index')}}" class="text-muted">{{__('ucModule.abilities')}} </a></li>
-                <li class="breadcrumb-item"><a href="{{route('role.index')}}" class="text-muted">{{__('ucModule.role group')}} </a></li>
+                <li class="breadcrumb-item"><a href="{{route('user.index')}}" class="text-muted">{{__('customTrans.users')}} </a></li>
+                <li class="breadcrumb-item"><a href="{{route('ability.index')}}" class="text-muted">{{__('customTrans.abilities')}} </a></li>
+                <li class="breadcrumb-item"><a href="{{route('role.index')}}" class="text-muted">{{__('customTrans.role group')}} </a></li>
            
         </x-breadcrumb>
 
@@ -22,7 +22,7 @@
     @endpush
 
 
-    <x-modal idName="UserCreateModel1" :title="__('ucModule.create new account')">
+    <x-modal idName="UserCreateModel1" :title="__('customTrans.create new account')">
 
        
         @livewire('UserModule.register-form')
@@ -38,8 +38,8 @@
 <x-search-index-section>
     
         <div class="col-sm-12 col-md-2">
-            <x-select :options="config('myConstants')['userType']" divWidth="12" :ChoseTitle="__('ucModule.user_type')" wire:model.live="searchUsertype"
-                ChoseTitle="{{ __('ucModule.all') }}"></x-select>
+            <x-select :options="config('myConstants')['userType']" divWidth="12" :ChoseTitle="__('customTrans.user_type')" wire:model.live="searchUsertype"
+                ChoseTitle="{{ __('customTrans.all') }}"></x-select>
         </div>
 
 </x-search-index-section>
@@ -67,10 +67,10 @@
                             sortBy={{ $sortBy }} sortdir={{ $sortdir }}></x-table-th>
 
 
-                        <th><span>{{ __('ucModule.mobile') }}</span></th>
+                        <th><span>{{ __('customTrans.mobile') }}</span></th>
 
 
-                        <th class="text-center">{{ __('ucModule.actions') }}</th>
+                        <th class="text-center">{{ __('customTrans.actions') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -107,8 +107,8 @@
                             <td>
                                 <select wire:model="editActiovation" class="form-control bg-white">
 
-                                    <option value="1">{{ __('ucModule.active') }}</option>
-                                    <option value="0">{{ __('ucModule.not active') }}</option>
+                                    <option value="1">{{ __('customTrans.active') }}</option>
+                                    <option value="0">{{ __('customTrans.not active') }}</option>
                                 </select>
                             </td>
                         @else
@@ -122,7 +122,7 @@
                                     'bg-danger dot-label' => $user->user_activation == 0,
                                     'bg-success dot-label' => $user->user_activation == 1,
                                 ])></div>
-                                {{ $user->user_activation == 1 ? __('ucModule.active') : __('ucModule.not active') }}
+                                {{ $user->user_activation == 1 ? __('customTrans.active') : __('customTrans.not active') }}
                             </td>
                         @endif
 
@@ -147,10 +147,10 @@
 
                                 <x-modal idName="Userpreview{{ $user->id }}">
 
-                                    {{ __('ucModule.created_at') }} : {{ myDateStyle1($user->created_at) }}</br>
-                                    {{ __('ucModule.email') }} : {{ $user->email }}</br>
-                                    {{ __('ucModule.need_to_change') }} :
-                                    {{ $user->need_to_change == 1 ? __('ucModule.yes') : __('ucModule.no') }}
+                                    {{ __('customTrans.created_at') }} : {{ myDateStyle1($user->created_at) }}</br>
+                                    {{ __('customTrans.email') }} : {{ $user->email }}</br>
+                                    {{ __('customTrans.need_to_change') }} :
+                                    {{ $user->need_to_change == 1 ? __('customTrans.yes') : __('customTrans.no') }}
 
                                 </x-modal>
 
@@ -159,7 +159,7 @@
                                     wire:click.prevent='edit({{ $user->id }})'></x-actions>
 
                                 <a wire:loading.attr='disabled' class="btn btn-lg text-danger "
-                                    wire:confirm.prompt="{{ __('ucModule.please insert user name for del') }}\n|{{ $user->user_name }}"
+                                    wire:confirm.prompt="{{ __('customTrans.please insert user name for del') }}\n|{{ $user->user_name }}"
                                     wire:click.prevent='destroy({{ $user->id }})'> <i
                                         class="ti-trash text-danger"></i> </a>
 
@@ -186,9 +186,9 @@
 
                                 <div class="dropdown-menu tx-13 ">
                                     <a class="dropdown-item " href="#"
-                                        wire:click.prevent='resetPass({{ $user->id }})'>{{__('ucModule.request_need_password')}}</a>
+                                        wire:click.prevent='resetPass({{ $user->id }})'>{{__('customTrans.request_need_password')}}</a>
 
-                                    <a class="dropdown-item " href="{{route('user-roles.create', $user->id )}}">{{__('ucModule.grant_privileges')}}</a>
+                                    <a class="dropdown-item " href="{{route('user-roles.create', $user->id )}}">{{__('customTrans.grant_privileges')}}</a>
                                 </div>
                             </div>
 

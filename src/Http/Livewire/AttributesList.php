@@ -15,6 +15,16 @@ class AttributesList extends Component
     public $x1;
 
 
+    // public function SelectFileType($value)
+    // {
+       
+    //     if($value=='card top header') {
+    //         $this->FileType='file';
+    //     } else {
+    //         $this->FileType='text';
+    //     }
+    // }
+
     public function mount()
     {
 
@@ -99,8 +109,8 @@ class AttributesList extends Component
         <x-button wire:click.prevent='store' label="save and back"></x-button>
  
 
-        <p> {{ __('ucModule.add new colums') }} <span><a href="{{ route('status') }}"
-                    target="_blank">{{ __('ucModule.here') }} </a> </span></p>
+        <p> {{ __('customTrans.add new colums') }} <span><a href="{{ route('status') }}"
+                    target="_blank">{{ __('customTrans.here') }} </a> </span></p>
  
               
 

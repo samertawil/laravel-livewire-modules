@@ -12,17 +12,17 @@ trait FlashMsgTraits
       
         if ($msg == 'create') {
             return toastr()->progressBar(false)->timeOut(1000) 
-            ->$msgType(__('ucModule.data_created_success'));
+            ->$msgType(__('customTrans.data_created_success'));
         }
 
          else if  ($msg == 'update') {
             return toastr()->progressBar(false)->timeOut(1000) 
-            ->$msgType(__('ucModule.data_edited_success'));
+            ->$msgType(__('customTrans.data_edited_success'));
         }
 
         else if ($msg == 'destroy') {
             return toastr()->progressBar(false)->timeOut(1000) 
-            ->$msgType(__('ucModule.data_deleted_success'));
+            ->$msgType(__('customTrans.data_deleted_success'));
         }
 
        else {

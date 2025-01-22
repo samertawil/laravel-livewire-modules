@@ -122,7 +122,7 @@ class  StatusClass extends Component
         //     abort(403);
         // }
 
-        $pageTitle =  __('ucModule.status system');
+        $pageTitle =  __('customTrans.status system');
 
         $statuses = Status::with(['systemname', 'status_p_id_sub', 'status_p_id'])
             ->select('status_name', 'id', 'p_id', 'p_id_sub', 'used_in_system_id')

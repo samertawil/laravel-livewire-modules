@@ -28,5 +28,5 @@
 
 
 {{-- 
-<x-tag-a :route="route($service->route_name)" :name="__('ucModule.sign in')" default_class="btn btn-outline-secondary  btn-light-primary"
+<x-tag-a :route="route($service->route_name)" :name="__('customTrans.sign in')" default_class="btn btn-outline-secondary  btn-light-primary"
     style="width: 100px; height: 38px; font-size:13px;"></x-tag-a> --}}

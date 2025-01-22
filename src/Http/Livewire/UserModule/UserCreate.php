@@ -26,10 +26,10 @@ class UserCreate extends Component
     public function render()
     {
         // if(Gate::denies('user.resource')) {
-        //     abort(403,__('ucModule.you have no access'));
+        //     abort(403,__('customTrans.you have no access'));
         //  }
 
-       $pageTitle=__('ucModule.users');
+       $pageTitle=__('customTrans.users');
         
         return view('livewire.users.user-create')->layoutData(['pageTitle'=>$pageTitle,'Title'=>$pageTitle]);
     }

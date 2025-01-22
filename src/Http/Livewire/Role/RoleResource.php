@@ -52,7 +52,7 @@ class RoleResource extends Component
     public function render()
     {
   
-        $title= __('ucModule.role group');
+        $title= __('customTrans.role group');
 
         $roles= Role::
         SearchName($this->search)
