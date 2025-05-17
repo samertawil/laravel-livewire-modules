@@ -355,6 +355,9 @@ return [
     'edit'=>'Edit',
     'services collection images'=>'Services collection images',
     'card_header'=>'ًCard_header',
+    'card_title'=>'عنوان البطاقة',
+    'card_text'=>'نص مختصر',
+    'card_url'=>'رابط المنشور',
 
 ];
 

@@ -14,11 +14,12 @@
     'id' => '',
     'divWidth' => '3',
     'divlclass' => '',
-    'ChoseTitle' => __('customTrans.choose one'),
+    'ChoseTitle' => 'choose',
     'divId'=>null,
     'jsSelect2'=>null,
     'wireIgone'=>null,
     'marginBottom'=>'3',
+    'description_field'=>null
  
 ])
 
@@ -41,14 +42,15 @@
         <select   id="{{ $id }}" name="{{ $name }}" dir={{ $dir }} 
             title="{{ $title }}"
             {{ $attributes->class(['form-control ', 'is-invalid' => $errors->has($name)]) }}>
-            <option value="">{{ $ChoseTitle }}</option>
+            <option value="" >{{ __("customTrans.$ChoseTitle") }} </option>
 
             @foreach ($options as $key => $value)
-                <option value="{{ $key }}" @selected(old($name) ? old($name) == $key : '')>
+                <option value="{{ $key }}" @selected(old($name) ? old($name) == $key : '') id="{{$name}}{{ $key }}">
                     {{ $value }} </option>
             @endforeach
         </select>
-        @include('partials._show-error', ['field_name' => $name])
+        <small class="text-muted">{{$description_field}}</small>
+        @include('layouts._show-error', ['field_name' => $name])
     </div>
   
 </div>

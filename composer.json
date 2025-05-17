@@ -3,7 +3,7 @@
     "description": "laravel livewire user primary modules",
     "type": "library",
     "require": {
-        "livewire/livewire": "3.5.18",
+      
 		 "yoeunes/toastr": "^3.1"
     },
     "license": "MIT",
